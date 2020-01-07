@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 1일차</title>
+    <!-- CSS 사용방법3가지 -->
+    <!-- 1. inline 방식 -->
+        <!-- html 태그에 style 속성을 입력 후 CSS를 입력하는 방식-->
+        <!-- 우선 순위가 가장 높음 -->
+        <!-- 활용도가 낮음 (권장하는 방법은 아니지만 필요할때가 있다.=> 다른 html 파일에서 재활용이 불가능함) -->
+    <!-- 2. html 태그의 <head></head> 태그안에 <syle></style>를 사용하여 CSS 코드를 입력하는 방식 -->
+        <!-- 현재 사용하고 있는 html 파일 내에서만 동작한다. -->
+    <!-- 3. 외부 CSS 파일 로드 방식-->
+        <!-- 외부세 CSS 파일을 미리 생성해 놓고 link 태그르 통해서 지정한 CSS 파일을 로드하여 사용 -->
+        <!-- 다른 html 파일에서도 동일하게 로드하여 사용할 수 있음 -->
+        <!-- link 태그를 통해서 외부의 CSS 파일을 로드 -->
+        <!-- link 태그를 통해서 다른 서버의 CSS 파일을 로드할수 있음 -->
+
+
+    <!-- CSS 로드 규칙 -->
+    <!-- html 이 윗라인부터 한라인씩 로드 하여 실행하는 방식이기 떄문에 CSS도 윗라인부터 아랫라인으로 한라인씩 로드하여 실행함 -->
+    <!-- 윗라인과 아랫라인이 동일한 속성을 사용하였을 경우에 먼저 로딩된 윗라인의 속성이 무시되고 아랫라인의 속성이 적용됨 -->
+    <!-- html에 inline 방식으로 적용된 CSS는 가장 마지막에  적용된다. -->
+    <!-- 윗라인과 아랫라인이 동일한 속성이 아닐경우 윗라인의 속성은 상속됨 -->
+  
+
+     <!-- 외부에서 CSS 속성을 적용 하는 방법 -->
+    <link rel="stylesheet" href="style.CSS">
+
+    <!-- html 파일 내부 style 방식 -->
+    <style>
+        *{
+            margin: 0px; 
+        } /* 외부 */
+                /* 하나의 선택자에 여러개의 CSS속성을 적용 가능함 */
+        #p02 {
+            color: royalblue;
+            font-size: 16px;
+        }
+
+        /* 여러개의 선택자를 선용할 수 있음 style 안에 한페이지 내용을 다 쓸수 있다. */
+        h1 {
+            color:slateblue;
+        }
+
+            /* 태그 선택자를 이용하여 section 태그를 선택 */
+            section {
+                width: 500px;
+                padding:10px;
+                border: 5px solid gray;
+            }
+    </style>
+    
+</head>
+<body>
+    <!-- inline 방식 -->
+    <p id="p01" style="color:red;">별 잠, 별 묻힌 써 둘 이네들은 벌써 위에도 까닭입니다. 보고, 헤일 아름다운 마리아 그리고 헤는 하나에 아직 애기 계십니다. 덮어 멀리 멀리 봅니다.</p>
+    <!--- html 파일 내부 style 방식 -->
+    <p id="p02">별 잠, 별 묻힌 써 둘 이네들은 벌써 위에도 까닭입니다. 보고, 헤일 아름다운 마리아 그리고 헤는 하나에 아직 애기 계십니다. 덮어 멀리 멀리 봅니다.</p>
+    <!-- 외부 CSS 파일로드 방식-->
+    <p id="p03">별 잠, 별 묻힌 써 둘 이네들은 벌써 위에도 까닭입니다. 보고, 헤일 아름다운 마리아 그리고 헤는 하나에 아직 애기 계십니다. 덮어 멀리 멀리 봅니다.</p>
+
+    <br><hr><br>
+
+    <div id="container">
+        <section>
+            <h2>Who am I?</h2>
+            <P>프론트엔드 웹 기술(Front-end Web Tech.)에 관심이 많습니다.<br>현재 제주의 한 시골 마을에서 코딩 중입니다.</P>
+        </section>
+            <br><hr><br>
+
+        <article>
+            <h2>Who am I?</h2>
+            <P>프론트엔드 웹 기술(Front-end Web Tech.)에 관심이 많습니다.<br>현재 제주의 한 시골 마을에서 코딩 중입니다.</P>
+        </article>
+
+        <h1>블루베리와 항산화 효능</h1>
+        <p style="color:greenyellow;">블루베리는 항산화제인....</p>
+        <p>메사츄세츠 보스턴에....</p>
+
+        <br><hr><br>
+
+        <div>
+            <h2 id="h201">오늘 집에 가서 복습할겁니다. </h2>
+            <h2 id="h202"> 짬봉이 먹고 싶구나 </h2>
+            <h2 class="h2class">별빛이 내린다 샤랄라라..</h2>
+            <h3 class="h2class">빨리 따라가야 하는데 기다려</h3>
+        </div>
+
+    </div>
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
