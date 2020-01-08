@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* color */
+    /* 문자의 색생을 변경하는 CSS 속성 */
+    /* 색상을 지정하는 방법은 미리 지정된 색상단어를 입력(140개), hex코드 입력 방식, rgb코드 입력 방식, hsl 코드 입력 방식, rgba코드 입력방식, hsla코드 입력방식 */
+    /* 미리 지정되 색상단어 입력 방식 */
+    /* 참고 https://www.w3schools.com/colors/colors_names.asp */
+    /* color : red; */
+    
+    /* hex코드 입력방식 */
+    /* 색상코드를 16진수로 표현하여 red, greem, blue 순서대로 2자리씩 총 6자리를 입력하느 방식 */
+    /* 색상코드는 00 ~ FF */
+    /* hex 코드 입력방식을 뜻하는 기호 #을 입력 */
+    /* color: #AABBCC */
+    /* color: #ABC*/
+    
+    /* rgb코드 입력방식 */
+    /* 색상코드를 10진수 숫자( 0 ~255 )를 red, green, bule 순서대로 입력하는 방식 */
+    /* rgb 코드 입력방식을 뜻하는 rgb( 0,0,0 ) 형태로 입력 */
+    /* 참고 https://www.w3schools.com/colors/colors_rgb.asp */
+    /* color: rgb(130, 70, 235); */
+    
+    /* rgb코드 입력 방식 */
+    /* rgb코드 입력방식에서 투명도를 나타내는 alpha 값을 추가한 방식 */
+    /* alpha 값은 0.0 ~ 1.0 까지의 값을 가지고 있음 */
+    /* 입력 순서는 red, green, vlue, alpha 순서로 입력 */
+    /* rgba 코드 입력방식을 뜻하느 rgba(0, 0, 0, 0.0) 형태로 입력 */
+    /* color: rgba(100, 200, 130, 0.5); */
+
+    /* hsl코드 입력 방식 */
+    /* rgb 방식과는 달리 색상을 색조, 채도, 명도로 구분하여 표현하는 방식 */
+    /* 색조는 0 ~ 360까지의 숫자를 입력, 채도 0 ~ 100 까지의 %를 입력, 명도 0 ~ 100 까지의 %를 입력하는 방식 */
+    /* 입력 순서는 색조, 채도, 명도 순으로 입력한다. */
+    /* hsl 코드 입력방식을 뜻하는 hsl(0, 0, 0) 형태로 입력 */
+    /* color: (330, 80%, 70%); */
+    
+    /* hsla코드 입력 방식 */
+    /* hsl코드 입력방식에 투명도를 나타내는 alpha값을 추가한 방식 */
+    /* alpha 값은 0.0 ~ 1.0 까지의 값을 가지고 있음 */
+    /* 입력 순서는 색조, 채도, 명도, 투명도 순으로 입력 */
+    /* hsla 코드 입력방식을 뜻하는 hsla (0, 0%, 0.0) 형태로 입력 */
+    /* color hsla(330, 80%, 70%, 0.8); */
+
+    /* 참고 색상표 변환기 */
+    /* https://html-color-codes.info/convert-color-format/ 등등 color picker*/
+
+    /* color 속성에 사용한 값은 문자뿐 아니라 다른 속성에서도 사용할 수 있음 */
+    /* 색상이름, hex 코드 입력방식을 가장 많이 사용함 */
+    /* text-decoration */
+    /* 입력된 문자에 선물을 추가하느 CSS 속성 */
+    /* none, underline(밑줄), overline(윗줄), line-through(취소선) */
+    /* a 태그에 기본적으로 underline 속성값이 주어져 있음 */
+    
+
+        h1 { color: rgb(0,200, 0);}
+        h2 { color: red;}
+        .accent { color: #002fff; }
+        .hsl { color: hsl(240, 70%, 30%); }
+
+        #div02 p { line-height: 1.8em; }
+        #div02 a { text-decoration: none;}
+        .edited {text-decoration: line-through;}
+    
+        #div02 a:hover { text-decoration: underline;}    /* hover : 마우스 선택시 밑줄 생성 */
+    
+        /* text-transform */
+        /* 영문자의 모야을 대문자, 소문자로 변경할 때 사용하는 CSS속성 */
+        /* none, capitalize(첫 글자만 대문자), uppercase(전체 대문자), lowercase(전체 소문자), full-width(전각문자) 로 변경 */
+
+        #div03 .trnas1 { text-transform: uppercase;}
+        #div03 .trnas2 { text-transform: lowercase;}
+        #div03 .trnas3 { text-transform: capitalize;}
+        #div03 .trnas4 { text-transform: full-width;}
+ 
+    </style>
+</head>
+<body>
+    <div>
+        <h3>color 속성</h3>
+        <h1>세계 10대 슈퍼 푸드</h1>
+        <img src="" alt="">
+        <h2>마늘(Garlic)</h2>
+        <p class="hsl">일해백리(一害百利)는....</p>
+        <p>마늘 특유의 아린 맛은 <span class="accent">알리신</span>이라는 성분 때문으로,...</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div02">
+        <h3>text-decoration 속성</h3>
+        <p>다양한 기기로 인터넷에 접속할 수 있는 요즘, <br><span class="edited">HTML4</span> HTML5를 공부해야 할 때 입니다.</p>
+        <p><a href="https://html.spec.whatwg.org/" target="_blank"><b>HTML5 표준 규약 살펴보기</b></a></p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div03">
+        <h3>text-transform 속성</h3>
+        <ul>
+            <li class="trans1">html</li>
+            <li class="trans2">CSS</li>
+            <li class="trans3">Java Script</li>
+            <li class="trans4">android</li>
+        </ul>
+    </div>
+
+ 
+
+
+    
+</body>
+</html>

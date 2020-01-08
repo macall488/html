@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 2일차</title>
+<!-- 외부 CSS 파일을 로드할 경우 html 내부 style 태그 보다 윗쪽에 입력함-->
+    <link rel="stylesheet" href="style.css">
+
+<style>
+    
+    * {
+        font-family: '궁서체';
+    }
+
+    /* CSS 선택자 */
+    /* CSS 속성을 적용하기 위하여 지정한 html 태그를 적ㅇ확히 선택하기 위한 구분자  */
+    /* 전체 선택자 */
+    /* 해당 페이지의 모든 html 태그를 선택하는 선택자 */
+    /*  주로 해당 페이지의 전체 스타일을 적용하기 위하서 가장*/
+    /* 기호를 사용함 */
+    
+    h2 {
+        color:green;
+    }
+
+    p {
+        font-size: 12px;
+        margin-left: 20px;
+    }
+    /* 태그 선택자 */
+    /* html 태그명을 그대로 사용하는 선택자 */
+    /* 해당 페이지에서 지정한 html 태그명과 같으 모든 태그르 선택하는 선택자 */
+    /* 지정한 html 태그에 동일한 스타일을 적용하기 위해서 사용함 */
+
+    /* 클래스 선택자 */
+    /* 다른 종류의 html 태그르 하나의 그룹으로 묶어서 CSS 속성을 적용하는 선택자 */
+    /* 기호를 사용 */
+    /* html 태그에 clls 속성ㅇ르 사용하여 그룹명을 지정함 */    
+    /* html태그명과 함께 클래스 선택자르 사용할 수 있음  */
+
+    .redtext {
+        color:red
+    }
+    /* html 태그명과 함께 클래스 선택자를 도시에 사용할 수 있음 */
+    h2.redtext {
+        margin-left: 50px;
+        font-weight:lighter;
+    }
+    
+    /* id 선택자 */
+    /* 지정한 html의 id 속성값을 기준으로 html 태그르 선택하는 선택자 */
+    /* # 기호를 사용함 */
+    /* 해당 html 페이지에서 id는 유일한 값을 가지고 있기 때문에 단 하나의 태그르 선택하는 선택자임 */
+    #purpletext {
+        background-color: purple
+    }
+    /* 그룹선택자 */
+    /* 동일한 CSS 속성을 적용할때 해당 선택자들을 모아서 한번에 입력할때 사요하는 선택자 */
+    /* *, 기호를 사용함 */
+    /* 선택자의 종류는 상관없이 , 로 구분하여 여러가의 선택자를 동시에 입력할 수 있음 */
+    h1, h2, h3, h4, h5, h6, .redtext, .purpletext{
+        text-align: center !important;
+    }
+    h1, h2 {
+        text-align: center
+    }
+
+    div > h3{
+        text-align: right; 
+    }
+    /* !important 속성값 */
+    /* CSS 속성 상속 받아서 사용할 경우 나중에 실행되는 속성이 기존의 속성을 무시하고 실행되게 되는 경우가 발생하는데 기존의 속성에
+     !omportant 속성값을 사용하게 되면 기존의 속성이 무시되지 않고 나중에 실행되는 속성이 무시됨*/
+    body {
+        color:blue;
+        }
+    
+    h2{
+        font-size:20px;
+        color:brown;
+    }
+
+    .box {
+        border: 2px solid green
+        weidth 300px;
+        weight: 2px;
+        padding:15px;
+    }
+    .box:hover {
+        transform:rotate(46deg)
+        -webkit-transform:rotate(15deg);
+        -moz-transform: rotat(45deg);
+        -o-trnasform: rotate(45deg);
+        -ms-transform: rotaat(45deg);
+
+    }
+    
+</style>
+</head>
+<body>
+    <h1 class="redtext">블루베리에 관한 연구</h1>
+    <h2 id="purpletext">블루베리와 항산화 효능</h2>
+    <p class="redtext">블루베리는...입니다.</p>
+    <h2 class="redtext">블루베리와 노화</h2>
+    <p style="background-color: teal">USDA .... sky line </p>
+    
+    <div>
+        <h3>사랑의 듣기만 굳세게 수 인생에 봄바람이다. 가슴에 만천하의 그와 만물은 이것이다. 너의 무엇을 구하기 있는가?</h3>
+    </div>
+
+    <br><hr><br>
+
+        <h1>CSS</h1>
+        <h2>웹 문서의 디자인과 내용을 분리합니다</h2>
+        <p>웹 표준에 의한 웹 문서는 디자인과 내용이 분리되어 있습니다.</p>
+        <p>내용은 HTML을 이요해 구성하고, 디자인은 CSS를 이용해 꾸미는 것입니다.</p>
+
+    <div class="box"> 불처럼올라라 주식아!~</div>
+
+    
+</body>
+</html>
