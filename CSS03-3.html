@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 3일차 나홀로 3번 파일 연습문제</title>
+    <style>
+        /* 연습문제 1 */
+        #div01 { width: 500; height: 400; padding: 5px solid black; }
+        #div01 .subject {font-size: larger; font-weight: 700;}
+
+        #div02 .subject { columns: #ad3000; font-weight: 700; font-size: larger;}
+        #div02 ul { list-style-type: none;} /* ul의 스타일을 none로 변경*/
+        #div02 li {line-height: 10px;}
+
+        .accent {color: #ad3000;
+                font-size: 25px;
+        }
+        
+        .section {width:500px; border: 50px solid black; padding: 0px;}
+
+        .shadow {color: silver; text-align: center; }
+
+        .accent01 {color: red;}     
+
+        .h1 { font-size: 17px;}   
+
+    </style>
+</head>
+<body>
+    <div class="div01">
+        <h2>최신 웹 디자인 트렌드</h2>
+        <p><span class="subject">반은형 웹 디자인 </span> - 다양한 화면 크기에 최적화한다.</p>
+        <p><span class="subject">플랫 디자인</span> - 입체에서 평명으로</p>
+        <p><span class="subject">풀스크린 배경</span> - 콘텐츠에 집중</p>
+        <p><span class="subject">원 페이지 사이트</span> - 한 페이지에 모든 내용을 담다</p>
+        <p><span class="subject">페럴렉스 스코롤링</span> - 동적인 효가ㅗ로 강한 인상을!</p>
+        <p><span class="subject">웹폰트</span> - 웹타이포그래피를 받처주는 기술</p>
+
+    </div>
+    <div class="div02">
+        <h2>최신 웹 디자인 트렌드</h2>
+        <p><span class="subject">반은형 웹 디자인 </span> - 다양한 화면 크기에 최적화한다.</p>
+        <p><span class="subject">플랫 디자인</span> - 입체에서 평명으로</p>
+        <p><span class="subject">풀스크린 배경</span> - 콘텐츠에 집중</p>
+        <p><span class="subject">원 페이지 사이트</span> - 한 페이지에 모든 내용을 담다</p>
+        <p><span class="subject">페럴렉스 스코롤링</span> - 동적인 효가ㅗ로 강한 인상을!</p>
+        <p><span class="subject">웹폰트</span> - 웹타이포그래피를 받처주는 기술</p>
+
+    </div>
+    <div id="container">
+        <section>
+        <h1 class="shadow">최신 웹 디자인 트렌드</h1>
+        </section>
+    </div>
+    <div class="class02">
+        <img src="./imges/사진.jpg" alt="사진사진사진사진">
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개!</h1>
+        <p>그래픽 프로그램으로 웹 디자인 요소를 일일이 만들어 웹사이트를 제작하는 시대는 지났다 이제 모바일 테블릿,PC, 등 멀티 디바이스에 한 번에 적용할 숭 있느 웹 디자인 방법을 알아야한다. 바로 코디을 이용한 뒙 디자인이다.</p>
+        <P><span class="accent01">이책은 HTML과 CSS에 대한 기초적인 내용망 알고 있다면 누구든 쉽게 코딩으로 여러가지 기기에 대응할 수 있는 웹 디자인을 만들 수 잇도록 기획되었다.</span>jQuery 플러그인을 가져다 사용할 수 있는 방법을 소스 한 줄 한줄 자세하고 친절하게 설명해 놓았으니까!</P>
+    </div>
+</body>
+</html>
