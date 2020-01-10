@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 4일차 1번 파일 </title>
+    <style>
+        body
+        /* 연습문제 1 */
+        #div01 {
+            width: 500px;
+            padding:10px;  
+            border:1px solid blue;
+            background: rgba(0, 0, 255, 0.2);
+        }
+
+        /* #div02 :hover 로 입력하면 자손 선택자를 사용한 것으로 인식하여 #div02의 모든 태그에 대해서 마우스 포인터가 올라갔을 경우 배경 색상과 글자색이 변경될 수 있으므로 주의해야함 */
+
+        #div01 h1 {
+            font-size: 17px;
+        }
+
+        #div01 p {
+            font-size: 16px;
+            line-height:25px;
+        }
+
+        /* 연습문제 2 */
+        #div02 {
+            width:500px;
+            padding: 10px;
+            border: 1px solid blue;
+            background: rgb(0, 0, 255);
+            /* div02의 자식 태그에 color 속성이 상속되어 텍스트의 색상이 변경됨 */
+            color: white;
+        }
+        #div02 h1 {
+            font-size: 17px;
+        }
+        #div02 p { font-size: 16;
+            line-height: 25px;
+        }
+
+        /* 연습문제 3 */
+        #div03 {
+            width: 600px;
+            height:400px;
+            padding:20px;
+            border: 1px solid #cccccc;
+            position: relative;
+        }
+
+        #div03 .content {
+            position: absolute;
+            top: 30px;
+            width: 90%;
+            padding: 10px;
+            background-image: url("./pic/003.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 400px;
+            
+           
+        }
+        #div03 h1 {
+            font-size: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        #div03 p {
+            font-size: 16px;
+            line-height: 25px;
+        }
+
+
+
+
+    
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개</h1>
+        <p>그래픽 프고그램으로 웹 디자이 요소를 일일이 만들어 웹사이트를 제작한는 시대는 지났다. 이베 모바일, 태을릿, PC 등 멀티 디바이스에 한번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로 
+            <b>코딩을 이용한 웹 디자인 </b>이다
+        </p>
+    </div><br><br>
+    <div id="div02">
+        <h1>웹 디자인 트렌드를 따라잡는 비법 대공개</h1>
+        <p>그래픽 프고그램으로 웹 디자이 요소를 일일이 만들어 웹사이트를 제작한는 시대는 지났다. 이베 모바일, 태을릿, PC 등 멀티 디바이스에 한번에 적용할 수 있는 웹 디자인 방법을 알아야 한다. 바로 
+            <b>코딩을 이용한 웹 디자인 </b>이다
+        </p>
+    </div><br><br>
+    <div id="div03">
+        <div class="content">
+            <br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <h1>하루 한알의 사과는 의사를 멀리한다.</h1 >
+        </div>
+    </div>
+</body>
+</html>

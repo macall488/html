@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 4일차 2번 파일</title>
+    <style>
+    /* block/inline level */
+    /* block level : html 태그가 하나의 라인을 모두 사용하는 상태 */
+        /* margin-top, margin-bottom, height 등의 CSS속성으 사용할수 없음 */
+        /* p, h1~h6, ul, ol div, blockquote, form, ht, table, fieldset, address */
+    /* inline level : html 태그가 하나의 라인을 모두 사용하지 않고 다른 태그와 함께 사용하는 상태 */
+    /* margin-top, margin-bottom, height 등의 CSS속성으 사용할수 없음 */
+    /* 해당 태그가 가지고 이쓴 컨텐츠의 크기만큼 해당 태그의 영역크기가 결정됨 */
+     /* img, input, textare, label, button, span, objevt, br, sub, sup */   
+     
+
+    #div01 * {
+        border: 1px solid black;
+        margin:10px;
+        padding:10px;
+    }
+    span { 
+        background-color: blue;
+        height: 300px;
+        width: 500px; /* 적용 안됨*/
+    }
+    /* box model */
+    /* 모든 html 태그는 margin, border, padding, content 라는 4가지 영역을 가지고 있음 */
+    /* margin : html 태그의 테두리 선 영역인 border의 외부 영역 */
+        /* 다른 hml 태그의 margin 영역과 겹칠 수 있음 */
+    /* border */
+    /* padding : html 태그의테두리 선 영역과 컨텐츠 영역 사이의 빈 공간 영역*/
+    /* content: html 태그가 그려지느 영역*/
+
+    /* width/height */ 
+    /*  html의 box model 에서 컨텐츠 영역의 큰기를 설정하는 CSS 속성*/       
+    /* 정수값(px), 백분율(%), auto(기본값) */
+    /* auto : 컨텐츠의 크기에 따라서 자동적으로 크기르 설정*/
+        /* block level 태그일 경우 width/height 둘 중 하나만 입력시 나머지 width/height는 자동으로 크기가 설정 됨 */
+    #div02 > div { margin: 10px;}
+    #div02 > .box1 {
+        width:400px;
+        height: 100px;
+        background-color: #ff6a00;
+    }
+    #div02 > .box2 {
+        width: 70%;
+        height: 100px;
+        background-color: #0095ff;
+    }
+    
+    /* display */
+    /* html 태그를 표시하는 유형을 설정하는 CSS 속성 */
+    /* block level 이나 inline level을 서로 변환할 수 있음  */
+    /* none, block, inline, inline-block */
+    /* none: htmnl 태그르 화면에 출력하지 않음 */
+        /* display: noned을 사용하게 되면 해당 html 태그가 화면에서 삭제된 것과 같은효과를 나타냄*/
+        /* 해당 html 태그가 있던 영역까지 사라짐 */
+        /* visibility 속성의  hidden 과는 다른 형태임*/
+        /* optical 속성의 hidden 과는 다른 형태임 */
+        /* block : html 태그를 block level 로 변경함 */
+        /* inline : html 태그를 block level 로 변경함 */
+        /* inline-block : html 태그를 block level과 inline level의 특성을 모두 가지고 있는 inline-vlock level로 변경함 */
+            /* inline-block : html 태그를 block level 과 inline level의 특성을 모두 가지고 있느 inline-block은 inline의 특성인 한 라인에 
+            여러개의 html태그르 사용하는 특성과 block의 즉성인 margin, padding, width, height의*/
+
+        #div03 #block img {
+            display: block ;
+            margin:10px;            
+        }
+
+        #div03 .div03-2 ul li{
+            display: inline;
+        }
+
+        #div03 .div03-3 ul li {
+            display: inline-block;
+            margin: 20px;
+        }
+
+        #div03 .div03-4 .box {
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+            border:  1px solid black;
+        }
+        #red {
+            background-color: red;
+        }
+        #green {
+            background-color: green;
+            /* display: none;*/
+            visibility: hidden;
+        }
+        #blue   {
+            background-color: blue;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <h1>black level 태그</h1>
+        <p>black level 태그</p>
+        <p>black level 태그<span>black level 태그</span>&nbsp;&nbsp;<span>inline level level 태그</span></p>
+    </div>
+
+    <div id="div02">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+
+    <div id="div03">
+        <div class="div03-1">
+            <div id="inline">
+                    <img src="./pic/001/001.jpg" alt="">
+                    <img src="./pic/001/003.jpg" alt="">
+                    <img src="./pic/001/004.jpg" alt="">
+            </div>
+            <div id="block">
+                <img src="./pic/001/001.jpg" alt="">
+                <img src="./pic/001/003.jpg" alt="">
+                <img src="./pic/001/004.jpg" alt=""> 
+            </div>
+        </div>
+        <br>
+        <div class="div03-2">
+            <ul>
+                <li><a href="#">애완견 종류</a></li>
+                <li><a href="#">입야하기</a></li>
+                <li><a href="#">건강돌보기</a></li>
+                <li><a href="#">더불어살기</a></li>
+            </ul>
+        </div>
+         <br>
+        <div class="div03-3">
+
+            <h3>inline-block level</h3>
+            <ul>
+                <li><a href="#">애완견 종류</a></li>
+                <li><a href="#">입야하기</a></li>
+                <li><a href="#">건강돌보기</a></li>
+                <li><a href="#">더불어살기</a></li>
+            </ul>
+            <h2>애완견 종류</h2>
+        </div>
+
+        <br>
+        <div class="div03-4">
+            <div id="red" class="box"></div>
+            <div id="green" class="box"></div>
+            <div id="blue" class="box"></div>
+        </div>
+
+    </div>
+    
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 4일차 </title>
+
+<style> /*  */
+
+    /* CSS 에서 색상 표현 방법 */
+    /* 16진수를 이용하여 2자리씩 rgb 순서대로 총6자리 숫자를 표기하는 방법 */
+    /* rgb 표기법 */
+    /* 색상을 0 ~ 255까지의 숫자를 이용하여 rgb 순서대로 3개의 숫자로 표기하는 방법 */
+    /* rgb 표기법 */
+    /* rgb 표기법에서 투명도르 나타내느 alpha를 추가하여 나타내는 방법 */
+    /* hsl 표기법 */
+    /* 색상을 색조, 채도, 명도, 순으로 0 ~ 360까지의 숫자, 백분율로 나타내는 방법 */
+    /* hsla 표기법 */
+    /* hsla 표기법에서 투명도를 나타내는 alpha 를 추가하여 나타내느 방법 */
+    /* 미리 정해놓은 색상명)140) 표기법 */
+    /* 자주 사용하는 색상명을 입력하여 색상을 표기하는 방법 */
+
+    /* backgronud-color */
+    /* 지정한 태그의 배경 색상을 설정하는 css 속성 */
+    /* 색상명 표기법, hex 표기법, rgb 표기법, hsl 표기법 모두 사용 가능 */
+    /* backgroud-color 속성은 자식 태그에게 상속되지 않음  */
+
+    #div01 {  background-color: #222222;}
+    #div01 .text1 { color: rgb(255, 255, 255);}
+    #div01 .text2 { color: rgba(255, 255, 255, 0.8); }
+    #div01 .text3 { color: rgba(255, 255, 255, 0.5); }
+    #div01 .text4 { color: rgba(255, 255, 255, 0.2); }
+
+    #div02 { 
+        background-color: #0094ff;
+        height:300px;
+        }
+    #div02 > div { 
+        background-color: white;
+        width: 90%;
+        padding: 15px;
+        border:10px solid black;
+        margin: 10px;
+    }
+    #div02 p { line-height: 30px;}
+
+    /* backgoroud-clip */
+    /* 배경 속성 적용 범위르 설정하는 CSs 속성 */
+    /* 배경 속성의 적용 범위를 box model의 어느 부분까지 적용할것인지 설정하는 CSS 속성*/
+    /* vorder-box, padding-box,context-box */
+
+    #div03-1, #div03-2, #div03-3 { 
+        background-color: darkgreen;
+        height: 200px;
+        width: 400px;
+        border: 10px dashed black;
+        padding: 20px;
+    }
+
+    #div03-1 { background-clip: border-box;}
+    #div03-2 {background-clip: padding-box;}
+    #div03-3 {background-clip: content-box;}
+
+    /* backgroumd-image */
+    /* 배경에 색상을 사용하느 것이 아니라 이미지를 설정하는 CSS 속성 */
+    /* url() 을 사용하여 이미지의 전체 경로를 입력 */
+
+    #div04 {
+        height: 1000px;
+        background-image: url("./pic/001/001.jpg");
+        background-clip:padding-box;
+    }
+
+    /* background-repeat */
+    /*  */
+    #div05, #div06, #div07 {
+        height: 500;
+        width: 1000;
+        background-image: url("./pic/001/001.jpg");
+        margin:20px, 0px;
+        border: 2px solid black;
+    }
+    #div05 { background-repeat: repeat-x;}
+    #div06 { background-repeat: repeat-y;}
+    #div07 { background-repeat: no-repeat}
+
+    /* background-size */
+    /* backgroumd-image를 사용할 경우 배경 이미지의 크기를 설정하는 CSS 속성 */
+    /* auto(기본값), cotain, cover, 크기(x축px, y축px), 백분율(x축%, y축%) */
+    /* contain : 배경 요소에 맞게 이미지를 확대/축소 */
+    /* cover : 베경 요소로 모두 덮도록 이미지를 확대/축소 */
+    /* 크기(x, y) : 배경의 크기를 px값으로 x축, y축 을 모두 입력 */
+    /* 백분율(x, y) : 배경의 크기를 %로 x축, y축을 모두 입력 (이미지배율 유지X) 숫자를 하나만 입력 시 나머지는 자동*/
+    /*  */
+    #div08-1, #div08-2, #div08-3, #div08-4, #div08-5 { 
+        height: 400;
+        width: 500;
+        background-image: url("./pic/001/001.jpg");
+        background-repeat: no-repeat;
+        border: 1px solid black
+    }
+
+    #div08-1 { background-size: auto;}
+    #div08-2 { background-size: contain;}
+    #div08-3 { background-size: cover;}
+    #div08-4 { background-size: 300px 250px;}
+    #div08-5 { background-size: 60%,60%;}
+
+    /* background-position */
+    /* background-image 속성을 사용하고 backgroun-repeat을 no-repeat 으로 설정할 경우 배경 이미지가 그려지 위치를 설정하는 CSS 속성 */
+    /* 위치 속성값으 X축, Y축 2개를 입력 */
+    /* legt, right, top, bottom, center */
+    #div09 {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        background-image: url("./pic/001/001.jpg");
+        background-position: center center ;
+        background-size: 70%, 50%;
+    }
+
+    /* background-origin */
+    /* background-image 속성을 사용할 경우 배경 이미지가 그려질 box model 기준을 설정하는 CSS속성  */
+    /* border-box, padding-box(기본값), content-box */ 
+    #div10-1, #div10-2, #div10-3 {
+        width:500px;
+        height: 200px;
+        border: 20px dashed rgb(0, 0, 0, 0.3);
+        margin: 20px;
+        padding:20px;
+        background-image: url("./pic/001/001.jpg");
+        background-repeat: no-repeat;
+    }
+    #div10-1 { background-origin: border-box;}
+    #div10-2 { background-origin: padding-box;}
+    #div10-3 { background-origin: content-box;}
+
+    /* background-attachment */
+    /* backgroun-image속성을 사용을 했을 경우 화면을 스크롤 시 배경 이미지를 고정하도록 설정하는 CSS 속성 */
+    /* scroll(기본값), fixed(배경 화면 고정 ) */
+
+    #div11 {
+        background-image: url("./pic/001/001.jpg");
+         
+    }
+
+    /* background */
+    /* 배경 관련 속성들을 한번에 설정하는 CSS 속성 */
+    /* background-image, background-repeat, background-attahment, backgound-podition, backgroind-clip, backgroud-origin,background-size 등 */
+    /* 해당 속성값 미입력 시 기본값으로 입력 됨 */
+
+</style>
+
+
+</head>
+<body>
+    <div id="div01">
+        <h1 class="text1">HTML5 + CSS3</h1>
+        <h1 class="text2">HTML5 + CSS3</h1>
+        <h1 class="text3">HTML5 + CSS3</h1>
+        <h1 class="text4">HTML5 + CSS3</h1>
+    </div>
+
+<br><hr><br>
+
+    <div id="div02">
+        <div id="dic02-2">
+            <h1>초콜릿(CHocolate)</h1>ss
+            <p>초콜릿은 카카오 콩을 가용한 식품이다.</p>
+            <p> 숙성한 카카오 콩을 볶은</p>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div03">
+        <div id="div03-1">초콜릿은 카카오 콩을 가용한 식품이다.초콜릿은 카카오 콩을 가용한 식품이다.</div id="div03-1" ><br>
+        <div id="div03-2">초콜릿은 카카오 콩을 가용한 식품이다.초콜릿은 카카오 콩을 가용한 식품이다.</div id="div03-1" ><br>
+        <div id="div03-3">초콜릿은 카카오 콩을 가용한 식품이다.초콜릿은 카카오 콩을 가용한 식품이다.</div id="div03-1" >        
+    </div>
+
+    <br><hr><br>
+
+    <div id="div04"></div><br>
+    <div id="div05"></div><br>
+    <div id="div06"></div><br>
+    <div id="div07"></div>
+
+<br><hr><br>
+
+    <div id="div08">
+        <div id="div08-1"></div>
+        <div id="div08-2"></div>
+        <div id="div08-3"></div>
+        <div id="div08-4"></div>
+        <div id="div08-5"></div>
+    </div>
+    <div id="div09"></div>
+<br><br><br>
+    <div>
+        <div id="div10-1"></div>
+        <div id="div10-2"></div>
+        <div id="div10-3"></div>
+    </div>
+    <br><br><br>
+
+    <div id="div11">
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+        <p>baclground0attachment 속성 사용하기</p>
+    </div>
+    
+</body>
+
+</html>
