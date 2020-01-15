@@ -1,0 +1,40 @@
+div { border: 1px solid #cccccc; }
+
+#container { 
+    width: 33.3%;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+#header {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#left-sidebar { 
+    width: 150px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: left;
+}
+
+#right-sidebar { 
+    width: 150px;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    float: right;
+}
+#contents { 
+    width: 490px;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+
+#footer {
+    padding: 20px;
+    clear: both
+     
+}

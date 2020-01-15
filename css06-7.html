@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 6잂차 7번파일</title>\
+    
+    <style>
+    
+        /* visibility */
+        /* html 태그를 화면에서 보이지 않게 숨기는 설정을 하는 CSS 속성 */
+        /* visibility(기존값), hidden, collapse */
+        /* collapse  */
+        /* html 태그를 화면에 보이지 않게 숨김 */
+            /* 숨겨진 html 태그의 영역은 그대로 존재함 */
+        /* opacity : 0.0 과 비슷한 효과 */
+        /* display L none 과는 다른 형태 */
+            /* display: none은 html 태그의 영역이 존재하지 않음 */
+
+            #div01::after {
+                clear:both;
+                display: table;
+                content:"";
+            }
+
+            #div01 .box {
+                float: left;
+                width: 33%;
+                padding: 5px;
+                box-sizing: border-box
+            }
+            #div01 img { width: 100%}
+
+            .invisible { 
+                visibility: hidden;
+                /* display: none; 태그를 삭제해버리다 */
+                /* opacity: 0.0; */
+            }
+
+            /* z-index */
+            /* html 적층 구조를 설정하는 CSS 속성 */
+            /* html 태그는 먼저 입력된 순서부터 아래에 깔리는 형태임 */
+            /* z-index를 사용 시 적층 레벨을 사용자가 직접 입력할 수 있음 */
+
+            #div02 {
+                width: 300px;
+                height: 300px;
+                background-color: orange;
+                border: 2px solid black;
+                position: relative;
+
+            }
+
+            #div02 .box { 
+                width: 150px;
+                height: 150px;
+                position: absolute;
+            }
+
+            .red { 
+                background-color: red;
+                top: 0px;
+                left: 0px;           
+                z-index: 15;     
+            }
+            .green { 
+                background-color: green;
+                top:50px;
+                left:50px;
+                z-index: 2;
+            }
+            .blue { 
+                background-color: blue;
+                top:100px;
+                left:100px;
+                z-index: 10;
+            }
+
+    </style>
+</head>
+<body>
+    <div id="div01">    
+        <div class="box">
+            <img src="./img/01.jpg" alt="" id="img01">
+        </div>
+        <div class="box">
+            <img src="./img/02.jpg" class="invisible" alt="" id="img02">
+        </div>
+        <div class="box">
+            <img src="./img/03.jpg" alt="" id="img03">
+        </div>
+        <br><br><br><br>
+    </div>
+    <div id="div02">
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 6일차 2번파일</title>
+    <style>
+        #div01 > div { box-sizing: border-box; }
+
+        #div01 > .box { 
+            width: 33.3%;
+            padding: 50px;
+            float: left;
+        }
+        
+        div { border: 1px solid #cccccc; }
+
+        #container { 
+            width: 33.3%;
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        #header {
+            padding: 20px;
+            margin-bottom: 20px;
+            background: url("./pic/001.jpg")
+
+        }
+
+        #left-sidebar { 
+            width: 15%;
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            float: left;
+            background: url("./pic/001.jpg")
+
+        }
+
+        #right-sidebar { 
+            width: 15%;
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            float: right;
+        }
+        #contents { 
+            width: 40%;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: left;
+        
+        }
+
+        #footer {
+            padding: 20px;
+            clear: both
+            
+        }
+        
+       
+
+
+        #div01 > .box1 { background-color: #bbbbbb;}
+        #div01 > .box2 { background-color: #cccccc;}
+        #div01 > .box3 { background-color: #dddddd;}
+
+        /* 문제 1) 예제를 기반으로  화면 에이아웃을 해더, 메인컨텐츠, 사이드바. 푸터 인 화면과 해더, 왼쪽 사이드바,
+         메인컨텐츠, 오른쪽사이드바 푸터 인 화면 2개를 생성하세요.  */
+         /* 2단 화면은 사이드바의위치는 상관없음 */
+         /* 사이드바의 크기가 20%를 넘지 않도록 해야 함 */
+
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <!-- class는 값을 여러개 가질 수 있음 -->
+        <!-- class 값이 여러개일 경우 여러  class의 속성을 모두 사용할 수 있다 -->
+        <div class="box box1">
+            <p>왼쪽</p>
+        </div>
+        <div class="box box2">
+            <p>중앙</p>
+        </div> 
+        <div class="box box3">
+            <p>오른쪽</p>
+        </div>
+    </div>
+
+
+    <br><br><br>
+    <div id="container">
+        <div id="header">
+        
+            <h1>사이트 제목</h1>
+        </div>
+        <div id="left-sidebar">
+            <h1>사이드바</h1>
+                <ul>
+                    <li>목록1</li>
+                    <li>목록2</li>
+                    <li>목록3</li>
+                    <li>목록4</li>
+                </ul>
+        </div>
+        <div id="right-sidebar">
+            <ul>
+                <li>목록1</li>
+                <li>목록2</li>
+                <li>목록3</li>
+                <li>목록4</li>
+            </ul>
+        </div> 
+        <div id="contents">
+            <h1>본문</h1>
+            <p>대한민국의 국민이 . .</p>
+        </div>
+        <div id="footer">
+            <h1>푸터</h1>
+            <p>국회는 선전포고...</p>
+            </div>
+    </div>
+    <br><br><br><br><br><br>
+
+    <div id="container">
+        <div id="header">
+        
+            <h1>사이트 제목</h1>
+        </div>
+        <div id="left-sidebar">
+            <h1>사이드바</h1>
+                <ul>
+                    <li>목록1</li>
+                    <li>목록2</li>
+                    <li>목록3</li>
+                    <li>목록4</li>
+                </ul>
+        </div>
+        <div id="right-sidebar">
+            <ul>
+                <li>목록1</li>
+                <li>목록2</li>
+                <li>목록3</li>
+                <li>목록4</li>
+            </ul>
+        </div> 
+        <div id="contents">
+            <h1>본문</h1>
+            <p>대한민국의 국민이 . .</p>
+        </div>
+        <div id="footer">
+            <h1>푸터</h1>
+            <p>국회는 선전포고...</p>
+            </div>
+    </div>
+    
+  
+</body>
+</html>

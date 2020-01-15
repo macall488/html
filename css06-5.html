@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 6잂차 5번파일</title>
+    <style>
+        #div01::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        
+        .box {
+            /* 한 라인의 크기에서 33%의 너비를 계산하여 너비를 적용 */
+            float:left;
+            width: 33%;
+            padding: 5px;
+            /* 너비와 높이의 크기를 테두리 선을 기준으로 설정 */
+            box-sizing: border-box;
+            
+        }
+        /* 이미지의 너비를 부모태그의 너비와 동일하게 맞춰라 */
+        img { width: 100%; }
+
+    </style>
+
+</head>
+<body>
+    <div id="div01">    
+        <div class="box">
+            <img src="./img/01.jpg" alt="" id="img01">
+        </div>
+        <div class="box">
+            <img src="./img/02.jpg" alt="" id="img02">
+        </div>
+        <div class="box">
+            <img src="./img/03.jpg" alt="" id="img03">
+        </div>
+        
+    </div>
+    
+</body>
+</html>

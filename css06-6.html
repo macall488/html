@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 6일차 6번파일</title>
+<!-- position -->
+    <!-- html   태그를 원하는 위치에 배치하기 위한 CSS 속성 -->
+    <!-- static. relatiove, absolute, fixed -->
+    <!-- relative, absolute, fixed는 위치 좌표 속성 top, right, bottom, left를 추가로 사용할 수있음 -->
+    <!-- static : 상대 위치 좌표 사용 
+        (다른 html 태그의 위치에 따라 현재 html 태그의 위치가 정해짐) -->
+    <!-- relative : 상대 위치 좌표 사용, 위치설정 속성 top, right, left, bottom을 추가로 사용함
+        (다른 html 태그의 위치에 따라 현재 html 태그의 위치가 정해짐) -->
+
+    <!-- absolute : 절대 위치 좌표 사용 부모태그의 시작위치가 자신의 시작위치(0 X 0)
+        ( 다른 htmnl 태그의 위치와 상관없이 0 x 0 에서 시작 -->
+        <!-- 부모태그의 position 값이 relative 이어야 함 -->
+    <!-- fixed : 절대 위치 좌표 사용, bady의 0 X 0 이 시작위치임 위치설정 속성 top, right, left, bottom을 추가로 사용함 
+        ( 다른 htmnl 태그의 위치와 상관없이 0 x 0 에서 시작 -->
+
+    <!-- top : html이 그려질 기준을 지정하는 속성, 상단 기준 -->
+    <!-- right : html이 그려질 기준을 지정하는 속성, 우측 기준 -->
+    <!-- bottom : html이 그려질 기준을 지정하는 속성, 하단 기준-->
+    <!-- left : html이 그려질기준을 지정하는 속성, 좌측 기준-->
+        <!-- 따로 지정을 하지 않으면 top/left가 기준이 된다. -->
+        <!-- 값을 따로 지정하지 않으면  -->
+<style>
+    .box { 
+        width: 200px;
+        height: 200px;
+        border: 2px solid black
+    }
+
+    .red { background-color: red;}
+    .green { background-color: green;}
+    .blue { background-color: blue;}
+
+    #div01 .red { position: static; }
+    #div01 .green { position: static;}
+    #div01 .blue { position: static; }
+
+    /* relative */
+    #div02 .red { 
+        position: relative;
+       
+    }
+    #div02 .green { 
+        position: relative;
+        top: 100px;
+        left: 100px;
+    }
+    #div02 .blue { 
+        position: relative;
+    }
+    /* absolute */
+    #div03 {
+        width: 500px;
+        height: 500px;
+        background-color: gray;
+        position: relative 
+    }
+
+
+    #div03 .red { 
+        position: absolute; 
+        width: 300px;
+        height: 300px;
+        left:-20px;
+    }
+    #div03 .green { 
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        bottom:50px;
+        right: 50px;
+    }
+    #div03 .blue { 
+        position: absolute; 
+        width: 100px;
+        height: 100px; 
+        top:10px;
+        left:10px; 
+    } 
+
+    #div04 {
+        width: 500px;
+        height: 500px;
+        background-color: gray;
+        /* position: fixed  */
+
+    }
+
+    #div04 .red { 
+        position: fixed; 
+        width: 20x;
+        height: 20px;
+    }
+
+    #div05 .box1 {
+        float:left;
+        width:100px;
+        background: #ffd800;
+        margin-right: 10px;
+        padding: 20px;
+    }
+
+    #div05 .box2 { 
+        position: relative;
+        left:-50px;
+        top:30px;
+        width:300px;
+        background:#0094ff;
+        float:left;
+        padding:20px;
+    }
+    #wrap {
+        /*  자식태그의 position: absolute 이기 때문에 반드시 realative 값이여야 한다. */
+        position:relative;
+        width:300px;
+        height:300px;
+        border:1px solid #ccc;
+    }
+    #wrap .box {
+        /* 자식 트개그 position : absolute 이면 부모 태그는 반드시 position: relative 이어야 함 */
+        position:absolute;
+        width:50px;
+        height:50px;
+        background: #0094ff;
+    }
+    #crd1 {top:0; left:0;}
+    #crd2 {top:0; right:0;}
+    #crd3 {bottom:0; left:0;}
+    #crd4 {bottom:0; right:0;}
+    #crd5 { top:100px; left:100px;}
+
+    /* position: sticky */
+    /* 기본형태는 일반 html 태그처럼 스크롤 되다가 특정 위치에 닿게 되면 그곳에 붙어서 고정되는 형태  */
+
+    #div07 .sticky {
+        position: sticky;
+        position: -webkit-sticky;
+        /* top: 0; */
+        bottom: 0px;
+        padding: 5px;
+        background-color: #0084ff;
+        border: 2px solid black;
+    }
+
+
+</style>
+
+</head>
+<body>
+
+    
+    
+    <div id="div01">
+        <h3>position : static</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+    <br><hr><br>
+    <div id="div02">
+        <h3>position : relative</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+    <br><hr><br>
+    <div id="div03" style="padding: 5px; background-color: gray">
+        <h3>position : absolute</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>
+    <br><hr><br>
+    <div id="div04">
+        <h3>position : fixed</h3>
+        <div class="box red"></div>
+        <div class="box green"></div>
+        <div class="box blue"></div>
+    </div>    
+    <br><br><br><br><br>    <br><br><br><br><br>    <br><br><br><br><br>
+
+    <div id="div05">
+        <h3>position : relative</h3>
+        <div class="box1">박스1</div>
+        <div class="box2">박스2</div>
+    </div>
+    <br><br><br><br><br>    <br><br><br><br><br>    <br><br><br><br><br>
+
+    <div id="wrap">
+        <div class="box" id="crd1">crd1</div>
+        <div class="box" id="crd2">crd2</div>
+        <div class="box" id="crd3">crd3</div>
+        <div class="box" id="crd4">crd4</div>
+        <div class="box" id="crd5">crd5</div>
+    </div>
+    <br><br><br><br><br>
+
+    <div id="div07">
+        <div class="sticky">
+            <p>position : sticky</p>
+            <p>스크롤 되다가 상단에 붙어요</p>
+        </div>
+        <div style="padding-bottom: 2000px;">
+        <p>국회의원과 정부는 법률안을 제출할 수 있다. 대통령은 국가의 안위에 관계되는 중대한 교전상태에 있어서 국가를 보위하기 위하여 긴급한 조치가 필요하고 국회의 집회가 불가능한 때에 한하여 법률의 효력을 가지는 명령을 발할 수 있다.
+
+            대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다. 계엄을 선포한 때에는 대통령은 지체없이 국회에 통고하여야 한다.</p>
+        <p>국회의원과 정부는 법률안을 제출할 수 있다. 대통령은 국가의 안위에 관계되는 중대한 교전상태에 있어서 국가를 보위하기 위하여 긴급한 조치가 필요하고 국회의 집회가 불가능한 때에 한하여 법률의 효력을 가지는 명령을 발할 수 있다.
+
+                대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다. 계엄을 선포한 때에는 대통령은 지체없이 국회에 통고하여야 한다.</p>
+        <p>국회의원과 정부는 법률안을 제출할 수 있다. 대통령은 국가의 안위에 관계되는 중대한 교전상태에 있어서 국가를 보위하기 위하여 긴급한 조치가 필요하고 국회의 집회 불가능한 때에 한하여 법률의 효력을 가지는 명령을 발할 수 있다.
+
+                    대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다. 계엄을 선포한 때에는 대통령은 지체없이 국회에 통고하여야 한다.</p>
+        </div>
+    </div>
+
+</body>
+</html>
