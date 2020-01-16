@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 8일차 4번파일</title>
+    <style>
+        /* 속성 ~- 값 선택자 */
+        /* 여러가지 속성 중 특정 값이 포함되어 있느 속성을 선택하느 선택자 */
+        /* [속성명 ~= 값] 으로 사용하는 선택자 */
+        /* [ = ] 선택자와는 달리 특정 값ㅇ 포함되어 있으면 선택함 */
+
+
+        .flat {
+            background: blue;
+            color: white;
+        }
+
+        [class ~= "button"] {
+            border: 2px solid black;
+            box-shadow: rgba(0, 0, 0, 0.4) 5px 5px;
+        }
+        /* 속성명 |= 값 선택자 */
+        /* 특정 값이 포함된 속성을 선택하는 선택자 */
+        /* 지정된 문자열이 '문자열-' 형태로 포함되어 있을 경우 선태 */
+        a[title |="us"] {padding: 5px 25px; }
+        a[title |="jap"] {
+            padding:5px 25px;
+            text-decoration:none;
+        }
+        /* ^= 선택자 */
+            /* [속성명 ^= 값 ] 형대로 사용 */
+            /* 특정 문자열로 시작하는 값을 찾아서 선택 */
+            /* 특정 문자열로 시작하는 값을 찾아서 선택 */
+        
+        /* $= 선택자 */
+            /* [속성명 $= 값 ] 형태로 사용 */
+            /* 특정 문자열이 포함되어 있는 값을 찾아서 선택 */
+
+        /* *= 선택자 */
+            /* [속성명 *= 값 ] 형태로 사용 */
+            /* 특정 문자열이 포함되어 있는 값을 찾아서 선택 */
+
+        a[title ^= "eng"] {
+            background: green;
+            padding:5px 25px;
+        }
+
+        a[title ^= "jap:"] {
+            background: gold;
+            padding: 5px 25px;            
+        }
+
+        a[title ^= "chin:"] {
+            background: red;
+            padding: 5px 25px;            
+        }
+
+        a[href $= "hwp"] {
+            background: rebeccapurple;
+            padding: 5px 25px;
+        }
+
+        a[href $= "xls"] {
+            background: darkcyan;
+            padding: 5px 25px;
+        }
+
+        [href *= "w3"] {
+            background: blue;
+            color:  white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">메뉴 1</a></li>
+        <li><a href="#">메뉴 2</a></li>
+        <li><a href="#" class="button">메뉴 3</a></li>
+        <li><a href="#" class="flat button">메뉴 4</a></li>
+    </ul>
+    <br><hr><br>
+    <h3> [ |= ] 선택자</h3>
+    <ul>
+        <li>외국어 서비스</li>
+        <li><a href="#" title="us">영어</a></li>
+        <li><a href="#" title="us-english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+    </ul>
+    <br><hr><br>
+
+    <h3>[ ^= ] 선택자</h3>
+    <ul>
+        <li>외국어 서비스</li>
+        <li><a href="#" title="english">영어</a></li>
+        <li><a href="#" title="japanese">일본어</a></li>
+        <li><a href="#" title="chinese">중국어</a></li>
+    </ul>
+    <br><hr><br>
+    <h3>[ $= ] 선택자</h3>
+        <ul>
+            <li><a href="intro.hwp">hwp 파일</a></li>
+            <li><a href="intro.xls">xls 파일</a></li>
+        </ul>
+    <br><hr><br>
+    
+    <h3>[ *= ] 선택자</h3>
+    <ul>
+        <li><a href="http://www.w3c.org/TR/html">HTML 표준안 사이트</a></li>
+        <li><a href="http://www.webplatform.org">튜토리얼과 아트클</a></li>
+        <li><a href="http://www.w3c.org/TR/css3-mediaqueries">미디어쿼리</a></li>
+    </ul>
+
+    
+</body>
+
+</html>

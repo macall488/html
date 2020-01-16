@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 8일차 1번 파일</title>
+
+    <style>
+        #container {
+            position: relative;
+            text-align: center;
+            margin-top: 40%;
+            margin-left: -15%;
+        }
+
+        h2 {
+            font-size: 2em;
+            color: white;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            
+        }
+
+        a:link, a:visited {
+            text-decoration: none;
+            color: #222222;
+        }
+
+        a:hover {
+            cursor: pointer;
+            color: chartreuse;
+        }
+        #dg {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            z-index:-100%;
+            background: url(".pig/001.jpg") left top no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://www.youtube.com/embed/U6z5lqBJPPA?autoplay=1&playlist=zG9QCzk9Vaw&loop=1&controls=0&mute=1" allow="accelerommeter; autoplay; encrypted-media;gyroscope; picture-in-picture" id="dg"></iframe>
+    <div id="container">
+        <h2>애플과 최고의 호환성을 자랑하는 이어폰</h2>
+        <h1><a href="https:///www.youtube.com/embed/y6LVioXm5Ck?autoplay=1&playlist=zG9QCzk9Vaw&loop=1&controls=0">사용방법 바로가기</a></h1>
+    </div>
+</body>
+</html>

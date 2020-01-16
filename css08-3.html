@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 8일차 3번 파일</title>
+    <style>
+    /* CSS 선택자 추가 사항 */
+    /* 자손 선택자 */
+    /* 상위 요소와 하위 요소 사이에 공백문자(' ')를 사용한는 선택자 */
+    /* 상위 요소에 포함된 모든 HTML 태그를 말함 (단계를 관계 없음) */
+    /* 하위 요소로 사용할 수 있는 선택자는 태그 선택자, id 선택자, class 선택자 */
+    /* section p { color : blue; } */
+
+    /* 자식 선택자 */
+    /* 상위 요소에 포함된 요소 중 1단계 아래에 있는 html 요소 */
+    /* '>' 를 사용한다. */
+    /* 하위 요소로 사용할 수 있느 선택자는 태그 선택자. id 선택자, class 선택자 */
+    /* section > p { color : blue; } */
+
+    /* 인접 형제 선택자 */
+    /* 지정한 요소와 동일한 단계에 있는 html 요소 중 선택하는 선택자 */
+    /* ' + ' 기호를 사용하여 원하는 요소를 선택함 */
+    /* 지정한 요소보다 순서가 늦은 요소를 선택함 */
+    /* section + p { color : blue; } */
+     
+        /* div > div > p { color : blue; } */
+        /* h2 { color: red; } */
+        h2 + p { color: blue;}
+
+        p + div { 
+            background-color: coral; 
+            padding: 20px;
+        }
+        
+        /* 형제 선택자 */
+        /* 인접 형제 선택자와 같이 동일한 단계에 있는 html 태그 요소를 선택하는 선택자 */
+        /* ' ~ ' 를 사용함 */
+        /* 인접 형제 선택자와는 달리 순서에 상관 없음 */
+        /* section ~ p { color L blue;} */
+
+        h1 ~ ul {
+            color: blue;
+            font-weight: bold;
+        }
+
+        p ~ ul { 
+            background-color: red;
+        }
+
+        /* 속성 선택자 */
+        /* 지정한 요소와 현재 상태를 확인하여 html 요소를 선택하느 선택자 */
+        /* [속성] 기호를 사용함 */
+        /* section[href] { color : blue } */
+        a[href] {
+            background-color: crimson;
+        }
+
+        /* 속성 선택자2 */
+        /* 지정한 속성에 특정 값을 확인하여 선택하는 선택자 */
+        /* [속성명 = 값 ] 기호를 사용*/
+        /* section[target = "_self"] { color : blue} */
+        a[target = "_blank"] {
+            padding-right: 30px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <p>더미 태그</p>
+        <div>
+            <h2>지정할 html 태그</h2>
+            <p>인접 형제 선택자로 선택할 html 태그</p>
+        </div>
+        
+        <p>더미 태그를</p>
+    </div>
+
+    <div id="div02">
+        <h1>예약 방법 및 요금</h1>
+        <ul>
+            <li>직접 통화</li>
+            <li>문자 남기기</li>
+        </ul>
+        <ul>
+            <li>1인 : 40,000</li>
+            <li>2인 : 60,000</li>
+            <li>3인 : 80,000</li>
+            <li>4인 : 100,000</li>
+        </ul>
+        
+        <br><hr><br>
+
+        <div>div 태그 요소</div>
+         <ul>
+             <li>아메리카노</li>
+             <li>카페라떼</li>
+             <li>에스프레소</li>
+         </ul>
+
+         <p>형제 선택자로 선택할 첫번쨰 태그 요소</p>
+         <ul>
+             <li>바나나</li>
+             <li>파인애플</li>
+             <li>망고</li>
+         </ul>
+
+         <h2>형제 선택자로 선택되지 않을 태그 요소</h2>
+         <ul>
+             <li>사과</li>
+             <li>복숭아</li>
+             <li>딸기</li>
+         </ul>
+
+    </div>
+    <br><hr><br>
+    <div id="div03">
+        <ul>
+            <!-- 첫번쨰 a 태그는 href속성이 없으므로 선택 안됨 -->
+            <li><a>메인 메뉴</a>메인 </li>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+        </ul>
+    </div>
+    <br><hr><br>
+    <div id="div04">
+        <h3>속성 = 값 선택자</h3>
+            <ul>
+                <li><a href="https://www.daum.net" target="_blank"></a>다음홈페이지</li>
+                <li><a href="https://www.naver.com" target="_self"></a>네이버홈페이지</li>
+                <li><a href="https://wwww.google.com" target="_blank"></a>구글홈페이지</li>
+            </ul>
+    </div>
+</body>
+</html>
