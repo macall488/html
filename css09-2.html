@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 9일차 2번파일</title>
+    
+    <style>
+        /* 트랜지션 */
+        /* html 태그 요소의 style을 변경하는 것을 트랜지션이라 한다. */
+        /* transition, trnasiton-property, trnasition-duration, transition-timing-function, trnasition-delay */
+
+        /* transition-property */
+        /* 트랜지션 대상르 설정하는 CSS 속성 */
+        /* all(기본값), none, 속성이름 */
+
+        /* transition-duration */
+        /* 트랜지션 대상의 속성이 변경되는 시간을 설정하는 CSS 설정 */
+        /* 시간 (기본값 = 0) */
+        #div01 .tr1 {
+            width: 200px;
+            height: 200px;
+            background-color: blueviolet;
+            border: 1px solid black;
+            -webkit-transition-property: width, height;
+            -moz-transition-property: width, height;
+            -o-transition-property: width, height;
+            -ms-transition-property: width, height;
+            transition-property: width, height;
+            -webkit-transition-duration: 2s, 1s;
+            -moz-transition-duration: 2s, 1s;
+            -o-transition-duration: 2s, 1s;
+            -ms-transition-duration: 2s, 1s;
+            transition-duration: 2s, 1s;
+        }
+        #div01 .tr1:hover {
+            width: 400px;
+            height: 400px;
+        }
+        #div01 .tr2 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            border: 1px solid   black;
+            -webkit-transition-property: wodth, height, background-color, trnasform ;
+            -moz-transition-property: wodth, height, background-color, trnasform ;
+            -o-transition-property:  wodth, height, background-color, trnasform ;
+            -ms-transition-property: wodth, height, background-color, trnasform ;
+            transition-property: wodth, height, background-color, trnasform ;
+            -webkit-transition-duration: 2s, 2s,;
+            -moz-transition-duration: 5s, 3s;
+            -o-transition-duration: 2s, 3s;
+            -ms-transition-duration: 2s, 3s;
+            transition-duration: 2s, 3s;
+        }
+        #div01 .tr2:hover {
+            width:400px;
+            height: 400px;
+            background-color: #ff6e5f;
+            -webkit-transform: rotate(100deg);
+            -moz-transform: rotate(100deg);
+            -o-transform: rotate(100deg);
+            -ms-transform: rotate(100deg);
+            transform: rotate(100deg);
+        }
+        /* trnasition-timing-function */
+        /* 트랜지션 설정 시 duration의 적용 방식을 설정하는 CSS */
+        /* linear : 처음부터 끝까지 동일한 속도로 진행 */
+        /* ease(기본값) : 처음은 천천히, 점점 속도가 빨라지다가 마지막에 천천히 동작 */
+        /* ease-in : 시작을 천천히 동작 */
+        /* ease-out : 끝을 천천히 동작 */
+        /* ease-in-out : 느리게 시작하고 느리게 끝남 */
+        /* cubic-bezier :  (x,y,x,y)
+        /* 참고 사이트 https://cubic-bezier.com */
+        #div02 div {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin: 5px 10px;
+            padding: 5px;
+            color: white;
+            background-color: #006aff;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        #div02:hover div { height: 600px; }
+        #div02 .linear {
+            -webkit-transition: 3s linear;
+            -moz-transition: 3s linear;
+            -o-transition: 3s linear;
+            -ms-transition: 3s linear;
+            transition: 3s linear;
+        }
+
+        #div02 .ease {
+            -webkit-transition: 3s ease;
+            -moz-transition: 3s ease;
+            -o-transition: 3s ease;
+            -ms-transition: 3s ease;
+            transition: 3s ease;
+        }
+
+        #div02 .ease-in {
+            -webkit-transition: 3s ease-in;
+            -moz-transition: 3s ease-in;
+            -o-transition: 3s ease-in;
+            -ms-transition: 3s ease-in;
+            transition: 3s ease-in;  
+        }
+        
+        #div02 .ease-out {
+            -webkit-transition: 3s ease-out;
+            -moz-transition: 3s ease-out;
+            -o-transition: 3s ease-out;
+            -ms-transition: 3s ease-out;
+            transition: 3s ease-out;  
+        }
+        #div02 .ease-in-out {
+            -webkit-transition: 3s ease-in-out;
+            -moz-transition: 3s ease-in-out;
+            -o-transition: 3s ease-in-out;
+            -ms-transition: 3s ease-in-out;
+            transition: 3s ease-in-out;  
+        }
+        #div02::after {
+            clear: both;
+            display: none;
+
+        }
+        #div03 div {
+            width: 200px;
+            height: 200px;
+            margin: 10px 5px;
+            padding: 5px;
+            color: white;
+            background-color: #ff6e5f;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            transition: width 2s;
+        }
+        #div03 :hover div { width: 500px;}
+        #div03 .linear {
+            -webkit-transition-timing-function: cubic-bezier(0, 0,1, 1);
+            -moz-transition-timing-function: cubic-bezier(0.45, 0.1, 0.25, 1);
+            -o-transition-timing-function: cubic-bezier(0, 0, 1, 1);
+            -ms-transition-timing-function: cubic-bezier(0, 0, 1, 1);
+        }
+        #div03 .ease {
+            -webkit-transition-timing-function: cubic-bezier(0.25, 0,1, 1);
+            -moz-transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+            -o-transition-timing-function: cubic-bezier(0.25, 0, 1, 1);
+            -ms-transition-timing-function: cubic-bezier(0.25, 0, 1, 1);
+        }
+        #div03 .ease-in {
+            -webkit-transition-timing-function: cubic-bezier(0.42, 0,1, 1);
+            -moz-transition-timing-function: cubic-bezier(0.42, 0.1, 0.25, 1);
+            -o-transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+            -ms-transition-timing-function: cubic-bezier(0.42, 0, 1, 1);
+        }
+        #div03 .ease-out {
+            -webkit-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+            -moz-transition-timing-function: cubic-bezier(0, 0.1, 0.58, 1);
+            -o-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+            -ms-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+        }
+        #div03 .ease-in-out {
+            -webkit-transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+            -moz-transition-timing-function: cubic-bezier(0.42, 0.1, 0.58, 1);
+            -o-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+            -ms-transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+        }
+        /* transition-delay */
+        /* html 태그의 속성르 변경할 경우 변경 시작 시간을 설정하는 CSS 속성 */
+        /* 기본값은 0s */
+        #div04 {
+            width: 500px;
+            height: 150px;
+            margin: 0 auto;
+            border: 1px solid #aaaaaa;
+            border-radius: 30px;
+            padding: 20px;
+            position: relative;
+        }
+
+        #div04:hover .box {
+            -webkit-transition: rotate(720deg);
+            -transition-rotate: (720deg);
+
+        }
+        
+        #div04 .box {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
+            background-color: #eeeeee;
+            font-size: 12px;
+        }
+
+        #div04 .box p {
+            text-align: center;
+            padding: 4px;
+        }
+        #no-delay {
+            -webkit-transition-duration: 3s;
+            -moz-transition-duration: 3s;
+            -o-transition-duration: 3s;
+            transition-duration: 3s;
+            border: 1px solid #ff6600;
+        }
+        #delay {
+            -webkit-transition-duration: 3s;
+            -moz-transition-duration: 3s;
+            -o-transition-duration: 3s;
+            -ms-transtion-duraiton: 3s;
+            transition-duration: 3s;
+            -webkit-transition-delay: 1s;
+            -moz-transition-delay: 1s;
+            -o-transition-delay: 1s;
+            -ms-transtion-delay: 1s;
+            transition-delay: 1s;
+            border: 1px solid blue;
+        }
+        /* transition */
+        /* transition-property, transition-duration, ransition-delay transition-timing-function 를 한번에 입력하기 위한 CSS 속성 */
+        #div05 .tr1 {
+            width: 200px;
+            height: 200;
+            background-color: red;
+            border: 1px solid black;
+            -webkit-transition: 2s ease-in;
+            -moz-transition: 2s ease-in;
+            -o-transition: 2s ease-in;
+            transition: 2s ease-in;
+        }
+        #div05 .tr1:hover {
+            width: 100px;
+            height: 100px;
+            background-color: #ff6655;
+            -webkit-transition: rotate(270deg);
+            -moz-transition: rotate(279deg);
+            -o-transition: rotate(270deg);
+            -ms-transition: rotate(270deg);
+            transition: rotate(270deg);
+        }
+        /* 문제 1) div 태그를 이용하여 원본이 사각형의 크기가 너비 100, 높이 100인 사각형을 생성하고, 마우스가 해당 div의 부모 div에 올라갔을 경우 360도 회전하면서 우측으로 이동하고,
+         사각형의 크기가 3배 커지는 사각형으 생성하세요*/
+         /* 원본 크기 100x100 */
+         /* 회전은 360도 */
+         /* 사각형의 색상은 원하는 색상으로 사용 (시작 색상과 끝 색상은 다름) */
+         /* 기본 위치에서 다른 위치로 이동 */
+         /* 마우스가 부모 태그에 hober 상태일때 동작 */
+
+         #div06 .go {
+             width: 100px;
+             height: 100px;
+             background: red; 
+             border: 1px solid blue;
+             
+            }
+        #go1 :hover{
+            width:400px;
+            height: 400px;
+            background-color: green;
+            -webkit-transform: rotate(720deg);
+            -moz-transform: rotate(720deg);
+            -o-transform: rotate(720deg);
+            -ms-transform: rotate(720deg);
+            transform: rotate(720deg);
+
+            -webkit-transition-duration: 3s;
+            -moz-transition-duration: 3s;
+            -o-transition-duration: 3s;
+            transition-duration: 3s;
+            border: 1px solid gold;
+         
+         엉망진창   #div06 {
+            width: 800px;
+             height: 300px;
+             background: red; 
+             border: 1px solid blue;
+             margin: 0 auto;
+             border-radius: 30px;
+             padding: 20px;
+             position: relative;
+        }
+        div06 .tr1 {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        #div06 .tr1:active {
+            margin-left: 62%;
+            width: 300px;
+            height: 300px;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <div class="tr1"></div>
+        <br>
+        <div class="tr2">!!!</div>
+    </div>
+    <br><br><br>
+    <div id="div02">
+        <div class="linear">linear</div>
+        <div class="ease">ease</div>
+        <div class="ease-in">ease-in</div>
+        <div class="ease-out">ease-out</div>
+        <div class="ease-in-out">ease-in-out</div>
+    </div>
+        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>        <br><br><br>
+    <div id="div03">
+        <div class="linear">linear</div>
+        <div class="ease">ease</div>
+        <div class="ease-in">ease-in</div>
+        <div class="ease-out">ease-out</div>
+        <div class="ease-in-out">ease-in-out</div>
+    </div>
+    <br><br><br> 
+    <div id="div04">
+        <div id="no-delay" class="box">
+            <p>no-delay</p>
+        </div>
+        <div id="delay" class="box">
+            <p>delay</p>
+        </div>
+    </div>
+    <br><br><br>  
+    <div id="div05">
+        <div class="tr1"></div>
+    </div>
+    <br><br><br>  
+    <div id="div05">
+        <div class="tr1"></div>
+        <br>
+        <div class="tr2"></div>
+    </div>
+    <br><hr><br>
+    <div id="div06">
+        <div id="go" class="go1">굴러간다</div >
+    </div>
+</body>
+
+</html>
