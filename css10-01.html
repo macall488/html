@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 10일차 1번파</title>
+<style>
+         .prod-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .prod-list li {
+            
+            position: relative;
+            float: left ;
+            padding: 0;
+            margin: 10px;
+            overflow: hidden;
+        }
+
+        .prod-list-img {
+            margin: 0;
+            padding: 0;
+            float: left;
+            z-index: 5;
+        }
+        .prod-list::after {
+            clear: both;
+            display: table;
+            content: '';
+            
+        }
+
+        .prod-list .caption {
+            position: absolute;
+            padding-top: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100%;
+            top: 200px;
+            opacity: 0;
+            -webkit-animation: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            -o-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            z-index: 10;
+            
+            
+        }
+        .prod-list li:hover .caption {
+            opacity: 1;
+            -webkit-transform: translateY(-200px);
+            -moz-transform: translateY(-200px);
+            -o-transform: translateY(-200px);
+            -ms-transform: translateY(-200px);
+            transform: translateY(-200px);
+        }
+
+        .prod-list .caption h1, .prod-list .caption p {
+            color: #fff;
+            text-align: center;
+            margin-top: 0, auto;
+            padding: 20px;
+        } 
+        body {
+            padding-left: 50px;
+            padding-top: 50px;
+        }
+
+      #div01 .box1 {
+          width: 200px;
+          height: 200px;
+          background-color: green;
+          -webkit-transition: background 1s;
+          -moz-transition: background 1s;
+          -o-transition: background 1s;
+          -ms-transition: background 1s;
+          transition:background 1s;
+          border: 1px solid black;
+      }
+      #div01 .box1:hover {
+          background: yellow;
+      }
+
+      #div02 .box img:hover {
+              
+              animation-name: rotate;
+              animation-duration: 1s;
+              margin: 0 auto;
+              padding: 0;
+              transform: rotate(45deg);
+                  border:1px solid black;
+                  border-radius: 10px;
+          }
+         
+              from {
+                  transform: rotate(0deg);
+              }
+              to {
+                  transform: rotate(45deg);
+                  border:1px solid black;
+                  border-radius: 10px;
+              }
+          
+          #div03 .img {
+            width: 400px;
+            height: 400px;
+            margin-top: 200px;
+            margin-left: 200px;
+        }
+        #div03 .img:hover {
+            -webkit-animation-name: photo;
+            -moz-animation-name: photo;
+            -o-animation-name: photo;
+            -ms-animation-name: photo;
+            animation-name: photo;
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            -o-animation-duration: 1s;
+            -ms-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            -moz-animation-direction: alternate;
+            -o-animation-direction: alternate;
+            -ms-animation-direction: alternate;
+            animation-direction: alternate;
+        }
+
+        @-webkit-keyframes photo {
+            from {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+            }
+            to {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @-moz-keyframes photo {
+            from {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+            }
+            to {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @-ms-keyframes photo {
+            from {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+            }
+            to {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @-o-keyframes photo {
+            from {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+            }
+            to {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+
+        @keyframes photo {
+            from {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+            }
+            to {
+                width: 400px;
+                height: 400px;
+                margin-left: 200px;
+                transform: scale(1.5);
+                box-shadow: 5px 5px 3px black;
+            }
+        }
+          
+        
+
+
+        
+
+
+        
+    </style>
+</head>
+<body>
+    <h1>신상품 목록</h1>
+    <div class="container">
+        <ul class="prod-list">
+            <li>
+                <img src="./pic/001/001.jpg" alt="">
+                <div class="caption">
+                <h1>사과</h1>
+                <p>  상품</p>
+                <p>가격 : 20,000원</p>
+                </div>
+            </li>
+            <li>
+                <img src="./pic/001/003.jpg" alt="">
+                <div class="caption">
+                <h1>사과맛 원두</h1>
+                <p>골롬비아산</p>
+                <p>가격 : 82,300원</p>
+                </div>
+            </li>
+            <li>
+                <img src="./pic/001/004.jpg" alt="">
+                <div class="caption">
+                <h1>GMO 사과</h1>
+                <p>유전자조작 사과</p>
+                <p>가격 : 120,000원</p>
+                </div>
+            </li>
+        </ul>        
+    </div>
+    <br><br><br><br><br><hr>
+
+    <div id="div01">
+        <div class="box1"></div>
+        
+    </div>
+    <br><br><br><br><hr>
+
+    <div id="div02">
+        <div class="box">
+            <img src="./pic/003.jpg" alt="">
+        </div>
+        
+    </div>
+    <br><br><br><br><br><hr>
+
+    <div id="div03">
+        <div>
+            <img src="./pic/사과1.jpg" alt="" class="img">
+        </div>        
+    </div>
+</body>
+</html>
+
