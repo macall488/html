@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 11일차 5번 파일</title>
+    <style>
+        /* CSS Flexible Box Layout */
+        /* Flexbox 이전의 레이아웃 */
+        /* 테이블을 이용한 레이아웃 */
+        /* div를 이용한 레이아웃 */
+        /* 섹션을 기준으로 한 레이아웃 */
+        /* 디자이너가 모든 화면의 레이아웃을 결정을 해야함 */
+        /* 여러 웹 페이지을 개발 시 각각 다른 크기의 페이지가 만들어짐 */
+
+        /* 웹 페이지의 레이아웃을 쉽게 구성하기 위해서 개발한 방법이 GRID System, Flexbox */
+        /* flexbox 를 여러개 이용해서 레이아웃을 구성하는 것을 CSS Flexible Box Layout */
+        /* flexbox 를 사용 하려면 부모 태그에 display : flex 속성을 추가 해야 함 */
+
+        /* flexbox의 구성 */
+        /* flex-direction : 플렉스 박스의 방향을 설정 */
+            /* row : 기본값, 왼쪽에서 오른쪽으로 flexbox를 배치
+             row-reverse : 오른쪽에서 왼쪽으로 배치
+             column : 세로로 배치, 위에서 아래로 배치
+              column-reverse : 세로로 배치 아래에서 위로 배치 */
+        /* flex-wrap : 플렉스 박스의 줄바꿈 설정 */
+            /* no-weap : 플렉스 박스를 한줄에 출력 */
+            /* wrap : 플렉스 박스를 여러줄에 출력 */
+            /* weap-reverse : 플렉스 박스를 여러줄에 출력, 방향 전환 */
+       
+        .flex-container {
+            display: flex;
+            background-color: dodgerblue;
+        }    
+
+        .flex-container > div {
+            background-color: #f1f1f1;
+            margin: 10px;
+            padding: 20px;
+            font-size: 32px;
+            text-align: center;
+            line-height: 75px;
+        }
+
+        #div01 > .flex-container {
+            display: flex;
+            background-color: dodgerblue;
+            /* flex-direction: row; */
+            /* flex-direction: row-reverse; */
+            /* flex-direction: column; */
+            /* flex-direction: column-reverse; */
+        }
+
+        #div01 > .flex-container > div {
+            background-color: white;
+            width: 100px;
+            margin: 10px;
+            display: flex;
+            border: 1px solid black;
+        }
+
+        #div02 .flex-container {
+            display: flex;
+            flex-wrap: nowrap;
+            background-color: dodgerblue;
+            flex-wrap:wrap;
+        }
+
+        #div02 .flex-container > div {
+            background-color: white;
+            width: 100px;
+            margin: 10px;
+            display: flex;
+            border: 1px solid black;
+        }
+        /* flex-flow : flex-direction의 속성을 설정하기 위한 속성 */
+        /* 순서는 flex-direction, flex-wrap 순서로 입력 */
+        #div03 .flex-container {
+            display: flex;
+            /* flex-flow: row wrap; */
+            /* flex-flow: row-reverse; */
+            /* flex-flow: column; */
+            flex-flow: column-reverse wrap-reverse;
+        }
+        #div03 .flex-container > div {
+            background-color: white;
+            width: 100px;
+            margin: 10px;
+            display: flex;
+            border: 1px solid black;   
+        }
+        /* justity-content : 플렉스 박스의 정렬 설정 */
+            /* center : 중앙 정렬 */
+            /* flex-start : 기본값, 왼쪽 정렬 */
+            /* flex-end : 오른쪽 정렬 */
+            /* space-aroud : 적정한 공간 분배*/
+            /* space-between : 양끝 정렬(양쪽 끝에 정렬되고 적정한 공간을 분배) */
+        #div04 .flex-container {
+            display: flex;
+            /* justify-content: center; */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+        }
+
+        /* align-items : 교차축 기준의 배치 방법 지정 */
+            /* cneter : 화면 세로 축의 중간에 배치 */
+            /* flex-start : 화면 세로 축의 상단에 배치 */
+            /* flex-flexend : 화면세로 축을 하단에 배치 */
+            /* staretch(기본값) : 화면 세로 축 전체에 배치 */
+            /* baseline : 화면세로 축 전체에 배치 */
+           
+        
+    
+        #div05 .flex-container {
+            display: flex;
+            height: 400px;
+           
+            align-items: baseline;
+            /* align-items: stretch; */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+        }
+            /* align-content : 플렉스 박스가 여러 줄일 때의 배치 방법 */
+            /* flex-start : 플렉스 박스가 여러줄로 표시될 때 왼쪽 정렬, 위에서 아래로 정렬, 기본값 */
+            /* flex-end : 플레스 박스가 여러줄로 표시될 때 왼쪽 정렬 아래에서 위로 정렬*/
+            /* center : 플렉스 박스가 여러줄로 표시 될때 중앙 정렬  */
+            /* space-between : 플레스 박스가 여러줄로 포시될 때 상하로 정렬, 가장 윗줄과 아랫줄은 여유 공간을 두지 않음 */
+            /* space-around : 플렉스 박스가 여러줄로 표시될 때 상하로 적절한 공간을 자동을로 배치 */
+        #div06 .flex-container {
+            display: flex;
+            height: 1000px;
+            flex-wrap: wrap;
+            /* align-content: flex-start; */
+            /* align-content: flex-end; */
+            /* align-content: center; */
+            /* align-content: space-around; */
+            align-content: space-between;
+
+        }
+        
+
+
+    </style>
+
+</head>
+<body>
+    <div id="div01">
+        <h3>flex-direction 사용하기</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+        </div>
+    </div>    
+
+    <br><hr><br>
+    <div id="div01">
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+    </div>
+    
+    <br><hr><br>
+
+    <div id="div02">
+
+        <h3>flex-wrap 사용</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+            <div><h2>4</h2></div>
+            <div><h2>5</h2></div>
+            <div><h2>6</h2></div>
+            <div><h2>7</h2></div>
+            <div><h2>8</h2></div>
+            <div><h2>9</h2></div>
+            <div><h2>10</h2></div>
+            <div><h2>11</h2></div>
+            <div><h2>12</h2></div>
+        </div>
+    </div>
+        <br><hr><br>
+    <div id="div03">
+        <h3>flex-wrap 사용</h3>
+        <div class="flex-container">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+            <div><h2>4</h2></div>
+            <div><h2>5</h2></div>
+            <div><h2>6</h2></div>
+            <div><h2>7</h2></div>
+            <div><h2>8</h2></div>
+            <div><h2>9</h2></div>
+            <div><h2>10</h2></div>
+            <div><h2>11</h2></div>
+            <div><h2>12</h2></div>
+        </div>
+    </div>
+<br><hr><br>
+<div id="div04">
+    <h3>flex-wrap 사용</h3>
+    <div class="flex-container">
+        <div><h2>1</h2></div>
+        <div><h2>2</h2></div>
+        <div><h2>3</h2></div>
+        <div><h2>4</h2></div>
+        <div><h2>5</h2></div>
+    </div>
+</div>
+<br><hr><br>
+<div id="div05">
+    <h3>flex-wrap 사용</h3>
+    <div class="flex-container">
+        <div><h1>1</h1></div>
+        <div><h3>2</h3></div>
+        <div><h5>3</h5></div>
+        <div><h2>4</h2></div>
+        <div><h6>5</h6></div>
+    </div>
+</div>
+<br><hr><br>
+<div id="div06">
+    <h3>online-content 사용</h3>
+    <div class="flex-container">
+        <div><h2>1</h2></div>
+        <div><h2>2</h2></div>
+        <div><h2>3</h2></div>
+        <div><h2>4</h2></div>
+        <div><h2>5</h2></div>
+        <div><h2>6</h2></div>
+        <div><h2>7</h2></div>
+        <div><h2>8</h2></div>
+        <div><h2>9</h2></div>
+        <div><h2>10</h2></div>
+        <div><h2>11</h2></div>
+        <div><h2>12</h2></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 11일차 1번파일</title>
+    <style>
+    /* 미디어쿼리 */
+    /* css에 도입된 모듈로 사이트에 접속하는 장치에 따라 특정한 CSS스타일을 적용시키는 모듈 */
+    /* 웹사이트에 접속하는 장치으 ㅣ홤녀 크기에 따라 레이아웃을 변경할 수 있는 기능 */
+    /* @media 키워드를 사용함 */
+    /* 미디어 쿼리는 CSS 구문 가장 아래에 입력함 */
+    /* 연산자 */
+    /* and : 조건을 추가할 때 사용 */
+    /* ,(쉽표) : 해당 CSS 속성을 적용할 조건이 여러개 존재할 경우 사용 */
+    /* only : 미디어  쿼리를 지원하는 웹브라우저에서만 사용하겠다는 의미 */
+    /* not : 지정하는 미디어 유형을 제외 */
+    
+    /* 미디어 유형 */
+    /* all : 모든 미디어 */
+    /* print : 인쇄장치 */
+    /* screen : 컴퓨터 모니터와 같은 스크린(스마트폰 스크린도 포함) */
+
+    /* tv : 음성과 영상이 동시 출력되는 TV */
+    /* aural : 음성 합성장치(화면을 읽어 소리로 출력하는 장치) */
+    /* braille : 점자 표시 장치 */
+    /* handheld : 패드(pad)처럼 손에 들고 다니는 장치 */
+    /* projection : 프로젝터 */
+    /* tty : 디스플레이 기능이 제한된 장치 */
+    /* embbossed : 점자 프린터  */
+
+    /* 미디어 퀴리의 조건 */
+    /* width, height : 웹 페이지의 가로, 세로, 너비 */
+    /* min-width, height : 웹 페이지의 최소 너비, 최소 높이 */
+    /* max-wdth, max-hight : 웹 페이지의 최대 너비, 최대 높이 */
+
+    /* 사용법 */
+    /* @media [only|not] 미디어유형 and [조건1] and [조건2]... { 설정할 CSS 구문..    } 
+        설정할 CSS 구문1
+        설정할 CSS 구문2 
+    */
+
+    /* 화면 회전 */
+    /* 컴퓨터 모니터나 테블릿, 스마트폰을 사용 시 기기를 세로나 가로로 보는데 웹 사이트가 현재 상활을 체크하여 화면을 출력함 */
+    /* orientation : portrait - 단말기 세로 방향 */
+    /* orientation :  */
+    body {
+        background-image: url("./images/bg0.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;        
+    }
+
+
+    @media screen and (max-width: 1024px) {
+        body {
+            background-image: url("./images/bg1.jpg");
+   
+        }
+    }    
+    @media screen and (max-width: 768px) {
+        body {
+            background-image: url("./images/bg2.jpg");
+            background-size: cover;
+        }
+    }
+    @media screen and (max-width: 320px) {
+        body {
+            background-image: url("./imges/bg3.jpg");
+            background-size: cover;
+        }
+    }
+    
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

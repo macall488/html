@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 11일차 </title>
+    <style>
+        /* 가변 이미지  */
+        /* 화면으 ㅣ크기에 따라서여러가지 크기의 이미지를 사용하는 방식 */
+
+        /* max-width / min-width */
+        /* 너비를 지정하는 width 속성에서 파생된 속성으로 해당 요소의 최소/최대 크기를 설정하는 CSS 속성 */
+        /* max-height/ min-height  */
+        /* 높이를 설정하는 height 속성에서 파생된 속서으로 해당 요소의 최대/최소 높이를 설정하는 CSS 속성 */
+        #div01 {
+            width: 96%;
+            margin: auto;
+        }
+        header {
+            width: 100%;
+            height: 120px;
+            background-color: #066cfa;
+            border-bottom: 1px solid black;
+        }
+
+        .header-text {
+            font-size: 32px;
+            color: white;
+            height: 400px;
+            text-align: center;
+            line-height: 120px;
+        }
+        .content {
+            float: left;
+            width: 62.5%;
+            height: 400px;
+            padding: 1.5625%;
+            background-color: #ffd800;
+        }
+        .content > img {
+            max-width: 100%;
+            height: auto;
+        }
+        .right-side {
+            float: right;
+            width: 31.25%;
+            height: 400px;
+            padding: 1.5625%;
+            background-color: #00dd90;
+        }
+
+        main::after {
+            clear: both;
+            display: table;
+            content: "";
+        }
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: #c3590a;
+        }
+        .content > img {
+            width: 350px;
+        }
+        #div03 video {
+            width: 100%;
+        }
+
+        /* picture */
+        /* 상황별로 이미지 파일을 변경하여 사요할 수 있도록 해주느 html 태그 */
+        /* source  태그와 함께 사용해야 함 */
+        /* 웹 브라우저에 따라서 지원하지 않을 수 있음 */
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <header>
+            <h1 class="header-text">가변 그리드 레이아웃</h1>
+        </header>
+        <main>
+            <section class="content">
+                <h4>본문</h4>
+                <img src="./pic/사과1.jpg" alt="">
+            </section>
+            <aside class="right-side">
+                <h4>사이드바</h4>
+            </aside>
+        </main>
+        <footer>
+            <h4>푸터</h4>
+        </footer>
+    </div>
+    <br><br><br>
+    <div id="div02">
+        <picture>
+            <source media="(min-width:1024px)" srcset="./pic/001.jpg">
+            <source media="(min-width: 768px" srcset="./pic/에어팟jpg">
+            <source media="(min-width: 320px)" srcset="./pic/003.jpg">
+                <img src="./pic/001/003.jpg" alt="">
+               
+        </picture>
+    </div>
+    <div id="div03">
+        <!-- 문제 1) 동영상을 화면에 출력하고 화면의 크기가 달라질때 동영상의 크기도 같이 달라지도록 설정하여 화면에 출력하세요  -->
+        <!-- 가변 이미지 사용할 떄와 동일 -->
+        <!-- webm, ogv, mp4 순으로 파일을 동영상 파일을 지원하도록 설정 -->
+            <video controls>
+                <source src="./media/003.webm" type="video/webm">
+                <source src="./media/002.ogv" type="video/ogv">
+                <source src="./media/001.mp4" type="video/mp4">
+                
+            </video>
+
+    </div>
+</body>
+</html>
