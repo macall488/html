@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css12-03 예제 페이지 생성</title>
+
+    <style>
+
+        * { box-sizing: border-box;}
+        footer {
+            height:120px;
+        margin: 5px;
+        background-color: dodgerblue;
+        text-align: center;
+        text-align: center;
+        line-height: 120px;
+        color: white; 
+        box-shadow: 0 1px 3px rgb(0, 0, 0), 0 1px 2px rgb(0, 0, 0);
+
+        }
+
+        header { 
+            background-color: purple;
+            color: white;
+            /* 상하 좌우에 태두리 선과 내부 컨텐츠 영역과의 기본 거리*/
+            padding: 15px;
+
+        }
+
+        main::after {
+            /* 자식 태그가 float 속성을 사용했을 경우 float속성을 가져간다 */
+            clear: both;
+            display: table;
+            content: '';
+
+        }
+        aside {
+            float: left;
+            padding: 15px 0;
+            width: 25%
+        }
+
+        section {
+            float: left;
+            padding: 15px;
+            width: 50%;
+
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        /* css선택자 중 공백문자(' ')는 자손 선택자임 */
+        .menu li {
+            padding: 8px;
+            margin-bottom: 7px;
+            background-color: skyblue;
+            color: white;
+            box-shadow: 0 1px 3px rgb(0, 0, 0), 0 1px 2px rgb(0, 0, 0);
+        }
+
+        menu:hover { background-color: rgb(3, 63, 88);}
+
+        .right {
+            background-color: skyblue;
+            padding: 150px;
+            column-rule-color: white;
+            text-align: center;
+            box-shadow: 0 1px 3px rgb(0, 0, 0), 0 1px 2px rgb(0, 0, 0);
+            
+        }
+
+        @media screen and (max-width: 768px) {
+            aside {width: 100%;}
+            section {width: 100%;}
+            
+        }
+    </style>
+
+</head>
+
+
+   
+<header>
+    <h1>header</h1>
+</header>
+<main>
+    <aside class="menu">
+        <ul>
+            <li>the fight</li>
+            <li>the fight</li>
+            <li>the fight</li>
+            <li>the fight</li>
+        </ul>
+     </aside>
+     <section class="contents">
+         <p>dowowoqoqowkdoqkwokd</p>
+     </section>
+    <aside>
+        <div class="right">
+            <h2>what?</h2>
+            <p>china is city on the fucking city</p>
+            <h2>what?</h2>
+            <p>china is city on the fucking city</p>
+            <h2>what?</h2>
+            <p>china is city on the fucking city</p>
+        </div>
+    </aside>
+</main>
+<footer>
+    <p>made in korea</p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>css 12일차 2번파일</title>
+    <style>
+        * {
+        box-sizing: border-box;
+    }
+
+    header {
+
+       padding: 15px;
+       color: white;
+       /* 상하좌우우에 테두리 선과 내부 컨텐츠 영역과의 기본 공간을 상하좌우에 15px씩 줌 */
+        background-color: purple;
+    }
+
+    main::after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+
+    aside {
+        float: left;
+        padding:15px 0;
+        width: 25px;
+    }
+
+    section {
+        float: left;
+        padding: 15px;
+        width: 50%;
+    }
+     
+    .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .menu li {
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color: dodgerblue;
+        color: white;
+        box-shadow: 0 1px 3px rgb(0, 0, 0), 0 1px px rgb(0, 0, 0);
+    }
+   
+    .menu li:hover { }
+    
+    .right {
+        background-color: dodgerblue;
+        padding:15px;
+        color : white ;
+        box-shadow: 0 1px 3px rgb(0, 0, 0), 0 1px px rgb(0, 0, 0);
+        text-align: left;
+
+    }
+
+    footer {
+        margin: 15px;
+        background-color: dodgerblue;
+        text-align: center;
+        color: white;
+    }
+    
+    
+                       
+                        
+                        
+
+    </style>
+</head>
+<body>
+        <div id="div01">
+                <header>
+                   <h1>Chania</h1>
+                </header>
+                <main>
+                <aside class="memu">
+                    <div class="box">
+                        <ul>
+                            <li>The fight</li>
+                            <li>The city</li>
+                            <li>The pizza</li>
+                            <li>The food</li>
+                        </ul>
+                    </div>
+                 </aside>
+                <section>
+                    <h1>The City</h1><br><p>one two three one two threeone two threeone two three</p>
+                </section>
+                <aside>
+                    <div class="right"></div>
+                        <h1>What?</h1>
+                        <p>I can do it</p>
+                        <br>
+                        <h1>where?</h1>
+                        <p>homehomehomehomehomehomehome</p>
+                        <h1>How?</h1>
+                        <p>https://www.w3schools.com/w3css/tryw3css_examples_album_text.htm
+                            https://www.w3schools.com/w3css/tryw3css_examples_album.htm</p>
+                    </div>
+                </aside>
+                </main>
+                <footer>
+                    <p>2020년 설립 부산회사</p>
+                </footer>
+
+        </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS 12일차 1번파일</title>
+    <style>
+    /* 메뉴룰 스마트폰으로 화면 메뉴로 변경 */
+    #div01 * {
+        box-sizing: border-box;
+    }
+
+    #div01 .topnav {
+        overflow: hidden;
+        background-color: #333333;
+    }
+
+    #div01 .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    #div01.topnav a:hover {
+        background-color: #dddddd;
+        color: black;
+    }
+
+    #div01 .topnav::after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+    #div02 * { box-sizing: border-box;}
+
+    #div02  .row:after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+
+    #div02 .column {
+        float: left;
+        width: 25%;
+        padding: 20px;
+    }
+    
+    #div05 * { box-sizing: border-box;}
+    #div05 .row {
+        display: flex;  /* flex box 사용*/
+        flex-wrap: wrap;  /* 자동 줄바꿈 사용 */
+    }
+
+    #div05 .column {
+        flex: 25%; /**/
+        padding: 25px;
+    }
+
+    /* 문제 1 576px 미만일때 h1 폰트 크기를 30px로 변경하세요 */
+    #dic04 .fontsize > h1 {
+        font-size: 80px;
+    }
+
+    #div06 * { 
+        box-sizing: border-box; 
+        margin: 0px;
+    }
+
+    #div06 header {
+        text-align: center;
+        padding: 32px;
+    }
+
+    #div06 main .row {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+  
+    #div06 main .column {
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+    }
+
+    #div06 main img {
+        width: 100px;
+        margin-top: 8px;
+        vertical-align: middle;
+    }
+
+    
+
+    @media screen and (max-width: 768px) {
+        #div02 .column {
+            width: 50%;
+        }
+        #div05 .column { flex: 50%;}
+    }
+        #div06 main .column {
+            flex: 50%; /* flex box의 너비를 50%로 설정*/
+            max-width: 50%; /* 최대 너비를 50%로 설정 */
+        }
+
+    @media screen and ( max-width: 576px ) {
+        .topnav a { 
+            float: none;
+            width:100%;
+        }
+    }
+
+    #div02 .column {
+        width: 100%;
+    }
+    
+    #div03 .hidden {
+        visibility: hidden;
+        /* opacity: 0.0; */
+        /* display: none; */
+        }
+    
+    #div04 .fontsize {
+        background-color: lightgray;
+        padding: 20px;
+    }
+    
+    
+    #div04 .fontsize > h1 { font-size: 30px;}
+    #div05 .column { 
+        flex: 100%; /* fleex-box의 크기를 100%로 설정*/
+        flex-direction: column; /* flex-box를 세로로 정렬*/
+        }  
+        
+    #div06 main .column {
+        flex: 100%;
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+    </style>
+</head>
+<body>
+    <div id="div01">
+    <h2>화면 크기에 따라서 메뉴의 형태 변경</h2>
+        <p>화면의 너비 576px 이상일 경우에는 기본적인 가로 메뉴로 출력</p>
+        <p>화면의 너비 576px 미만일 ㅣ경우에는 세로형 메뉴로 출력</p>
+
+        <div class="topnav">
+            <a href="#">메뉴1</a>
+            <a href="#">메뉴2</a>
+            <a href="#">메뉴3</a>
+        </div>
+    </div>
+    <br><hr><br>
+
+    <div id="div02">
+        <h2>화면 크기에 따라서 레이아웃 변경하기</h2>
+        <div class="row">
+            <div class="column" style="background-color: #aaaaaa;">
+                <h2>column2</h2>
+                <p>첫번째 공간</p>
+            </div>
+            <div class="column" style="background-color: #bbbbbb;">
+              <h2>column2</h2>
+                <p>두번째 공간</p>
+            </div>
+            <div class="column" style="background-color: #cccccc;">
+               <h2>column3</h2>
+                <p>세번째 공간</p>
+            </div>
+            <div class="column" style="background-color: #dddddd;">
+                <h2>column4</h2>
+                 <p>네번째 공간</p>
+            </div>
+            
+        </div>
+    </div>    
+
+    <br><hr><br>    <br><hr><br>    <br><hr><br>
+
+
+
+    <div id="div03">
+        <h2>화면 너비에 따사서 특정 html을 숨기기</h2>
+        <div class="hidden">
+            <h1>숨겨질 html</h1>
+            <p>화면의 너비가 576px 미만일 경우 화면에서 숨김</p>
+        </div>
+        <div>
+            <p>화면느이 그기에 상괁없아 출력됨</p>
+        </div>
+    </div>
+
+    <br><hr><br> 
+
+    <div id="div02">
+            <h2>화면의 크기에 따라 폰트 크기 변경</h2>
+        
+        <div class="fontsize">
+            <h1> font size가 변경괼글자</h1>
+        </div>
+        <p>화면에 크기에 상관없이 출력될 부분</p>
+    </div>  
+    <br><hr><br>
+    <div id="div05">
+        <h2>flexbox를 사용하여 화면 크기에 따라 공간 설정하기</h2>
+        <p>화면 너비 768px 이상일 경우 한줄에 모든 컬럼이 출력</p>
+        <p>화면 너비가 768px 미만일 경우 한줄에 2개의 컬럼이 출렬</p>
+        <p>화면 너비가 576px 미만일 경우 한줄에 1개의 컬럼이 출력</p>
+
+        <div class="row">
+            <div class="column" style="background-color: #aaaaaa;">
+            <h2>FLex BOx Column1</h2>
+            <p>Flex box를 사용하여 공간 설정</p>
+            </div>
+            <div class="column" style="background-color: #bbbbbb;">
+                <h2>FLex BOx Column2</h2>
+                <p>Flex box를 사용하여 공간 설정</p>
+            </div>
+            <div class="column" style="background-color: #cccccc;">
+                <h2>FLex BOx Column3</h2>
+                <p>Flex box를 사용하여 공간 설정</p>
+            </div>
+            <div class="column" style="background-color: #dddddd;">
+                <h2>FLex BOx Column4</h2>
+                <p>Flex box를 사용하여 공간 설정</p>
+            </div>
+            
+        </div>
+    </div>
+    <br><hr><br>
+    <div id="div06">
+        <header>
+            <h1>반응형 웹을 적용한 이미지 갤러리</h1>
+            <p>화면의 너비에 따라 이미지를 출력하는 방식이 변경 됨</p>
+        </header>
+        
+        <main>
+            <div class="row">
+                <div class="column">
+                    <img src="./images/falls2.jpg" alt="">
+                    <img src="./images/mist.jpg" alt="">
+                    <img src="./images/nature.jpg" alt="">
+                    <img src="./images/ocean.jpg" alt="">
+                    <img src="/images/paris.jpg" alt="">
+                    <img src="./images/rocks.jpg" alt="">
+                    <img src="./images/underwater.jpg" alt="">
+                    <img src="./images/wedding.jpg" alt="">
+                </div>
+                <div class="column">
+                    <img src="./images/falls2.jpg" alt="">
+                    <img src="./images/mist.jpg" alt="">
+                    <img src="./images/nature.jpg" alt="">
+                    <img src="./images/ocean.jpg" alt="">
+                    <img src="/images/paris.jpg" alt="">
+                    <img src="./images/rocks.jpg" alt="">
+                    <img src="./images/wedding.jpg" alt="">
+                </div>
+                <div class="column">  
+                    <img src="./images/nature.jpg" alt="">
+                    <img src="./images/ocean.jpg" alt="">
+                    <img src="/images/paris.jpg" alt="">
+                    <img src="./images/rocks.jpg" alt="">
+                    <img src="./images/underwater.jpg" alt="">
+                    <img src="./images/wedding.jpg" alt="">
+                    <img src="./images/falls2.jpg" alt="">
+                </div>
+                <div class="column"> 
+                    <img src="./images/falls2.jpg" alt="">
+                    <img src="./images/mist.jpg" alt="">
+                    <img src="./images/nature.jpg" alt="">
+                    <img src="./images/ocean.jpg" alt="">
+                    <img src="/images/paris.jpg" alt="">
+                    <img src="./images/rocks.jpg" alt="">
+                    <img src="./images/underwater.jpg" alt="">
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
