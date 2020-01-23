@@ -25,8 +25,7 @@
     /* 실제 애니메이션 효과를 생성하기 위해 시작 지점과, 종료 지점을 설정하는 CSS함수 */
     /* @keyframes 이름 {
             선택자 { CSS 선택자 */
-    
-    #div01 > div {
+                #dv {
         width: 100px;
         height: 100px;
         background-color: blue;
@@ -91,13 +90,210 @@
             border-radius: 50%;
         }
     }
+    
+
+    #div01 div {
+        width :100px;
+        height: 100px;
+        float: left;
+        margin: 50px;
+    }
+    #div01::after {
+        clear: both;
+        display: none;
+        content: '';
+    }
+    
+    #box1 {
+        background-color: #4cff00;
+        border:  1px solid black;
+        -webkit-animation-name: shape;  
+        -moz-animation-name: shape;
+        -o-animation-name: shape;
+        -ms-animation-name:shape;
+        animation-name: shape;
+        -webkit-animation-duration: 3s;  
+        -moz-animation-duration: 3s;
+        -o-animation-duration: 3s;
+        -ms-animation-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-direction: alternate;
+        -o-animation-direction: alternate;
+        animation-direction: alternate;
+        animation-iteration-count: infinite;
+    }
+    #box2 {
+        background-color: #8f06b0;
+        border:  1px solid black;
+        -webkit-animation-name: rotate;  
+        -moz-animation-name: rotate;
+        -o-animation-name: rotate;
+        -ms-animation-name:rotate;
+        animation-name: rotate;
+        -webkit-animation-duration: 3s;  
+        -moz-animation-duration: 3s;
+        -o-animation-duration: 3s;
+        -ms-animation-duration: 3s;
+        animation-duration: 3s;
+    }
+    
+    @-webkit-keyframes shape {
+        from {
+            border: 1px solid black;
+        }
+        to { border: 1px solid black;
+            border-radius:  50%;
+        }
+    }
+    @-moz-keyframes shape {
+        from {
+            border: 1px solid black;
+        }
+        to { border: 1px solid black;
+            border-radius:  50%;
+        }
+    }
+    @-o-keyframes shape {
+        from {
+            border: 1px solid black;
+        }
+        to { border: 1px solid black;
+            border-radius:  50%;
+        }
+    }
+    @-ms-keyframes shape {
+        from {
+            border: 1px solid black;
+        }
+        to { border: 1px solid black;
+            border-radius:  50%;
+        }
+    }
+    @keyframes shape {
+        from {
+            border: 1px solid black;
+        }
+        to { border: 1px solid black;
+            border-radius:  50%;
+        }
+    }
+    @-webkit-keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to { transform: rotate(45deg);
+        }
+    }
+    @-moz-keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to { transform: rotate(45deg);
+        }
+    }
+    @-o-keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to { transform: rotate(45deg);
+        }
+    }
+    @-ms-keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to { transform: rotate(45deg);
+        }
+    }
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to { transform: rotate(45deg);
+        }
+    }
     /* animatio-name */
     /* keyframe을 통해서 생성된 애니메이션 효과를 실제 적용시키기 위해서 미리 생성된 keyframe의 이름을 설정하는 CSS 속성 */
-    </style>
+    /* animation-name : keyframe의 이름을 설저하는 CSS 속성  */
+    /* animatio-name : keyframe이름 */
+    /* 자바스크립트의 함수 선언 방식과 비슷함 */
+    /* 소스코드를 재활용 할 수 있음 */
+
+    /* animation-duration */
+    /* 애니메이션이 동작하는 시간을 설정 */
+    /* animation을 설정하지 않으면 애니메이션이 동작하지 않음 */
+    /* 사용값 : 초(s), 기본값(0) */
+
+    /* animation-direction */
+    /* 애니메이션이 동작하는 방향을 설정하는 CSS */
+    /* normal(기본값), alternate */
+    /* normal은 애니메이션 종료 시 해당 애니메이션의 시작부분으로 이동함 */
+    /* alternate는 애니메이션 종료 시 해당 애니메이션의 시작부분으로 이동하기 위해 반대 방향으로 애니메이션을 실행함 */
+
+    /* animation-iteration-cout */
+    /* 지정한 애니메이셔늘 몇번 반복할 것인지 설정하는 CSS속성 */
+    /* 반복횟수(기본값1), infinite(무한 반복) */
+
+    .box {
+        margin-top: 50px;
+        margin-left: 50px;
+        padding: 20px;
+        height: 60px;
+        -webkit-animation-name: moving;
+        -moz-animation-name: moving;
+        -o-animation-name: moving;
+        -ms-animaiotn-name: moving;
+        animation-name: moving;
+        -webkit-animation-duration: 3s;
+        -moz-animation-duration: 3s;
+        -o-animation-duration: 3s;
+        -ms-animaiotn-duration: 3s;
+        animation-duration: 3s;
+        -webkit-animation-direction: normal;
+        -moz-animation-direction: normal;
+        -o-animation-direction: normal;
+        -ms-animation-direction:normal;
+        animation-direction:normal;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        -ms-animaiton-iteratoin-count: infinite;
+        animation-iteration-count: infinite;
+    }
+    
+    @keyframes moving {
+        from {
+            width: 200px;
+            background: #faef7c;
+            opacity: 0,5;
+            transform: scale(0.5), rotate(15deg);
+        }
+        to {
+            width: 400px;
+            background: #ff9400;
+            opacity: 1;
+            transform:  scale(1) rotate(0deg);
+        }
+    }
+    /* animation-timing-function */
+    /* transtion의 timing-function와 동일한 옵션을 사용함 */
+
+    /* animation */
+    /* animation의 여러가지 속성들을 한번에 입력하는 CSS */
+    /* naimation-timing-function, animation0delay, animation0iteration, animation-direction 의 속성을 한번에 입력함 */
+
+        </style>
 </head>
 <body>
     <div id="div01">
-        <div></div>
+        <div id="box1"></div>
+        <div id="box2"></div>
+    </div>
+     
+    <br><hr><br>
+
+    <div id="div02">
+        <div class="box"><h3>CSS3 Amarika</h3></div>
     </div>
     
     

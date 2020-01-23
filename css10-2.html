@@ -166,11 +166,15 @@
             font-size: 1.5em;
         }   
         body {
+            /* root 폰트 크기로 지정 */
             font-size: 16px;
         }
         #div04 .fontem { font-size: 2em;}
         #div04 .fontrem { font-size: 2rem;}
+        /* rem은 root 폰트 크기에서 배수로 폰트 크기를 계산 */
+        /* root 폰트 크기 16px X 2가 되어 32px임 */
         #div04 .fluid-text { font-size: 1.5em;}
+        /* 부모 태그인 header-text의 폰트 크기가 32px 이므로 em은 부모태그의 폰트 크기에 영향을 받으므로32px X2 되어 64px가 된다 */
         #div04 .fluid-text { font-size: 1.5rem;}
 
     </style>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>html 4일차</title>
+</head>
+<body>
+    <!-- form 태그 -->
+    <!-- form 태그는 사용자의 입력을 받는 태그들의 집합. -->
+    <!-- 입력된 사용자의 정보를 웹 서버로 전송하느 역할을 한다. -->
+    
+    <!-- <form></form> 태그-->
+    <!-- 속성-->
+    <!-- action : form 태그이 자식 태그가 저장하고 있는 데이터를 지정한 서버 페이지로 전송한다. -->
+    <!-- method : 저장하고 있느 데이터를 전송하느 방식, get/post -->
+        <!-- get : 데티어를  web사이트의 주소에 붙여서 전송 -->
+            <!-- 주로 중요한 정보가 없는 데이터를 전소할 경우 사용-->
+            <!-- post 방식 보다 빠르다 -->
+        <!-- post: 페이지 전체를 암호화 해서 전송 -->
+            <!-- 중요한 정보 밑 개인정보를 서버로 전송 시 사용 -->
+            <!-- get 방식보다 느리다.-->
+    <form accept="html104-1.php">   
+    
+    </form>
+
+    <!-- <label></label> 태그-->
+        <!-- 사용자 테이터 입력란 앞 혹은 뒤에 붙어서 해당 데이터 입력란이 무엇인지 표시하는 기능 -->
+        <!-- for 속성을 사용하면 for 속성과 연동된 데이터 입력란을 클릭한 것과 동일한 효과를 방생시킴  --> 
+        <!-- 속성 --> 
+        <!-- for : input 태그의 id값을 입력하면 label 태그를 클릭 시  input 태그를 클릭한 것과 동일한 효과를 발생시킨다.-->
+    <!-- <label></label> 태그는 한줄에 여러가지 태그를 입력 가능하다. -->
+
+        <label for="username">이름 : </label><br>
+        <input type="text" id="username"><br>
+        <lavel for="userpw">비밀번호 : </lavel>
+        <input type="password" id="userpw"><br>
+        <label for="useremail">이메일</label>
+        <input type="email" id="useremail"><br><br>
+
+
+    <!-- <input> 태그 -->
+        <!-- 사용자의 입력을 받는 태그 -->
+        <!-- type 속성에 따라서 사용하는 방법이 변경됨-->
+        <!-- <inpt> 시작 태그만 존재하고 끝 태그가 없다-->
+        <!-- inline 형식의 태그로 한라인에 여러개의 태그를 사용할 수 있음 -->
+        <!-- <form></form> 태그의 자식 태그로 존재해야만 테이터를 서버로 전송할 수 있음-->
+    <!-- 속성 -->
+    <!-- id : html 현재 페이지 내에서 html 태그르 구분하는 유일한 값 -->
+    <!-- placeholder : 주로 type 속성이 text일떄 사용되며 입력할 값 혹은 관련 설명을 출력하고 사용자가 테이터 입력 시 자동으로 지워지는 글자-->
+    <!-- value : 사용자가 입력하는 데이터를 실제 가지고 있는 속성 -->
+            <!-- 미리 입력 시 사용자가 데이터를 입력하지 않아도 값이 출력 됨 (기본값은 비어있음) -->
+    <!-- disabled : input 태그를 사용하지 못하도록 비활성화 -->
+    <!-- cheched : radiobox,checkbox에서 사용하는 속성 -->
+            <!-- 해당 <input> 테그가 선택이 되었는지 확인하는 속성 -->
+    <!-- type : <input> 태그의 출력형식을 변경하는 태그 -->
+        <!-- 입력에 따라 checkobox. radio, password, text, email, buttom, reset, submit등 여러가지 출력 형태로 변경됨 -->
+    <!-- <input> 태그는 웹브라우져의 종류에 따라서 출력되는 형태가 조금씩 다르거나 지원되지 -->
+        <label for="">이름 : </label>
+        <input type="text" id="name" placeholder="이름을 입력하세요"><br>
+        <label for="">전화번호 : </label>
+        <input type="text" id="tel" placeholder="전화번호를 알려주세요"><br>
+        <label for="">주소 : </label>
+        <input type="text" id="addr" value="부산 부산진구 양정동" disabled><br>
+        <label for="">이메일 : </label>
+        <input type="text" id="email" value="song@mac.net" disabled="disabled">
+
+        <br><br><br>
+
+        <label>type : text - </label>
+        <input type="text" value="일반 텍스트 입력"><br>
+        <label>type : password - </label>
+        <input type="password" placeholder="비밀번호 입력"><br>
+        <label>type : email - </label>
+        <input type="email" paceeholder="이메일 주소를 입력"><br>
+        <label>type : number - </label>
+        <input type="number"><br>
+        <label>type : button - </label>
+        <input tyep="button" value="일반 번튼"><br>
+        <label>type : submit - </label>
+        <input type="submit" value="확인 버튼"><br>
+        <label>type : color - </label>
+        <input type="color"><br>
+        <label>type : date - </label>
+        <input type="date"><br>
+        <label>type : datetime-local</label>
+        <input type="datetime-local"><br>
+        <label>type : checkbox - </label>
+        <input type="checkbok" value="사과">사과&nbsp;&nbsp;
+        <input type="checkbox" value="바나나">바나나<br>
+        <label>type: radio</label>
+        <input type="radio" name="gender" value="남자">남자&nbsp;&nbsp;
+        <input type="radio" name="genger" value="여자">여자&nbsp;&nbsp;
+        <label>type : hidden - </label>
+        <input type="hidden" value="화면에 보이지 않는 값">
+
+        <br><br><br>
+
+        <!-- type : range -->
+        <!--  슬라이드 막대대를 생성한는 input 태그 -->
+        <!-- min, man, value 속성을 사용 -->
+            <!-- step : value의 변경값을 조절하 수 있음, 기본값 1 -->
+        <label>볼륨 조절 : </label>
+        <input type="range" min="0" max="10" value="5">
+        <label>볼륨 조절 2 : </label>
+        <input type="range" min="0" max="100" value="50" step="5">
+</body>
+</html>
